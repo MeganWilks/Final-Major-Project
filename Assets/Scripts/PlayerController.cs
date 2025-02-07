@@ -18,12 +18,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speedCrouching;
     [SerializeField] private float speed;
 
-    [Header ("Player Sizing")]
+    [Header("Player Sizing")]
 
     [SerializeField] private Vector3 crouchingSize;
     [SerializeField] private Vector3 playerSize;
 
-    [Header ("Player Stats")]
+    [Header("Player Stats")]
 
     [SerializeField] private int attackPower;
 
@@ -44,9 +44,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float xPos;
     [SerializeField] private float yPos;
 
-    [Header ("Health_ Variables")]
+    [Header("Health_ Variables")]
     [SerializeField] private int healthValue = 3;
- 
+
+    [Header("Player Animation")]
+    [SerializeField] private Animator playerAnimator;
+
+
 
     void Start()
     {
@@ -73,9 +77,8 @@ public class PlayerController : MonoBehaviour
         KeyPressedMovement();
 
         isMoving = CharController.velocity.sqrMagnitude > 0 ? true : false; // If value is greater than 0 then is True, if less then false ternary conditional operator
+        playerAnimator.SetBool("IsWalking", isMoving); // if IsMoving is true then set animator IsWalking to true
         #endregion
-
-
     }
 
     private void PlayerMovement()
@@ -118,11 +121,12 @@ public class PlayerController : MonoBehaviour
             isCrouching = false;
             speed = speedWalking;
             player.transform.localScale = playerSize;
+
         }
         #endregion // No State
     }
 
 
 
-  
+
 }
