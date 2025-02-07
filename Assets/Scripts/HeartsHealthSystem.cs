@@ -16,7 +16,7 @@ public class HeartsHealthSystem
            heartList.Add(heart);
         }
 
-        heartList[heartList.Count - 1].SetFragments(2);
+        heartList[heartList.Count - 1].SetFragments(3);
 
 
     }
