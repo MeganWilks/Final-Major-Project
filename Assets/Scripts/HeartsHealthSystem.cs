@@ -12,7 +12,7 @@ public class HeartsHealthSystem
         heartList = new List<Heart>();
         for (int i = 0; i < heartsAmount; i++)
         {
-           Heart heart = new Heart(3);
+           Heart heart = new Heart(2);
            heartList.Add(heart);
         }
 
@@ -36,7 +36,7 @@ public class HeartsHealthSystem
             this.fragments = fragments;
         }
 
-        public int GetFragementsAmount()
+        public int GetFragmentsAmount()
         {
             return fragments;
         }

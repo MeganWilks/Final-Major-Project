@@ -33,7 +33,7 @@ public class HeartsHealthVisual : MonoBehaviour
     private void Start()
     {
         #region Start
-        HeartsHealthSystem heartsHealthSystem = new HeartsHealthSystem(3);
+        heartsHealthSystem = new HeartsHealthSystem(3);
         SetHeartsHealthSystem(heartsHealthSystem);
         #endregion
 
@@ -50,7 +50,7 @@ public class HeartsHealthVisual : MonoBehaviour
         for (int i = 0; i < heartList.Count; i++)
         {
             HeartsHealthSystem.Heart heart = heartList[i];
-            CreateHeartImage(heartAnchoredPosition).SetHeartFraments(heart.GetFragementsAmount());
+            CreateHeartImage(heartAnchoredPosition).SetHeartFraments(heart.GetFragmentsAmount());
             heartAnchoredPosition += new Vector2(10, 0);
         }
         #endregion
@@ -76,7 +76,7 @@ public class HeartsHealthVisual : MonoBehaviour
         Image heartImageUI = heartGameObject.GetComponent<Image>();
         heartImageUI.sprite = emptyHeartSprite;
 
-        HeartImage heartImage = new HeartImage (heartImageUI);
+        HeartImage heartImage = new HeartImage (this, heartImageUI);
         heartImageList.Add(heartImage);
 
         return heartImage;
@@ -110,12 +110,18 @@ public class HeartsHealthVisual : MonoBehaviour
 
         public void  SetHeartFraments(int  fragments)
         {
-            Debug.Log("heartImage = " + heartImage);
+            
             switch (fragments)
             {
-                case 0: heartImage.sprite = heartsHealthVisual.fullHeartSprite; break;
-                case 1: heartImage.sprite = heartsHealthVisual.halfHeartSprite; break;
-                case 2: heartImage.sprite = heartsHealthVisual.emptyHeartSprite; break;
+                case 0: 
+                    heartImage.sprite = heartsHealthVisual.emptyHeartSprite;
+                    break;
+                case 1: 
+                    heartImage.sprite = heartsHealthVisual.halfHeartSprite; 
+                    break;
+                case 2:
+                    heartImage.sprite = heartsHealthVisual.fullHeartSprite;
+                    break;
             }
         }
         #endregion
