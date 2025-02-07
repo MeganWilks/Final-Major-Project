@@ -713,6 +713,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1584484606}
+  capsuleColliders: {fileID: 1584484608}
+  CharController: {fileID: 1943707103}
   speedSprinting: 2
   speedWalking: 1
   speedCrouching: 0.5
@@ -720,7 +722,6 @@ MonoBehaviour:
   crouchingSize: {x: 0.5, y: 0.5, z: 0.5}
   playerSize: {x: 1, y: 1, z: 1}
   attackPower: 0
-  healthValue: 3
   camera_: {fileID: 1221811585}
   isJumping: 0
   isCrouching: 0
@@ -729,8 +730,7 @@ MonoBehaviour:
   isMoving: 0
   xPos: 0
   yPos: 0
-  capsuleColliders: {fileID: 1584484608}
-  cc: {fileID: 1943707103}
+  healthValue: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
