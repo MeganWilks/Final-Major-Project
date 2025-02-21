@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private CapsuleCollider capsuleColliders;
     public CharacterController CharController; // Character Controller 
-    private Vector3 moveDirection = Vector3.zero;
+    private Vector3 movementDirection = Vector3.zero;
 
     [Header("Player Speeds")]
 
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Animation")]
     [SerializeField] private Animator playerAnimator;
 
-    [Header("Rotation Settings")]
+    [Header("Rotation Variables")]
     [SerializeField] private float rotationSpeed = 90f;
 
 
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
         #region playerControllerInput
 
         PlayerMovement();
-        HandleRotation();
+        PlayerRotation();
 
         KeyPressedMovement();
 
@@ -89,20 +89,20 @@ public class PlayerController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
+        // Normalized means that the Direction is the same but it stays like this a little longer
+        movementDirection = new Vector3(horizontal, 0, vertical).normalized;
 
-        moveDirection = new Vector3(horizontal, 0, vertical).normalized;
-
-        if (moveDirection.sqrMagnitude > 0.01f)
+        if (movementDirection.sqrMagnitude > 0.01f)
         {
-            CharController.SimpleMove(moveDirection * speed);
+            CharController.SimpleMove(movementDirection * speed);
         }
     }
 
-    private void HandleRotation()
+    private void PlayerRotation()
     {
-        if (moveDirection.sqrMagnitude > 0.01f)
+        if (movementDirection.sqrMagnitude > 0.01f)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
     }
