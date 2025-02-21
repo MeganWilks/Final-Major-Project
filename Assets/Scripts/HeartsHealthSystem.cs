@@ -6,8 +6,12 @@ using UnityEngine;
 
 public class HeartsHealthSystem
 {
+    public const int MAX_FRAGMENT_AMOUNT = 2; // Constant Wont change value
 
+    //Events
     public event EventHandler OnDamaged;
+    public event EventHandler OnHealed;
+
     private List<Heart> heartList;
 
     public HeartsHealthSystem(int heartsAmount)
@@ -29,6 +33,7 @@ public class HeartsHealthSystem
 
     public void Damage(int damageAmount)
     {
+        #region Damage Loop
         //Goes through all hearts from start to end
         for (int i = heartList.Count - 1; i >= 0; i--)
         { 
@@ -49,7 +54,35 @@ public class HeartsHealthSystem
             }
         }
 
-        if  (OnDamaged != null) OnDamaged(this, EventArgs.Empty);
+       
+        if (OnDamaged != null) OnDamaged(this, EventArgs.Empty);
+        #endregion
+    }
+
+    public void Heal(int healAmount)
+    {
+        // Goes through all the hearts
+        for (int i = 0; i<heartList.Count; i++)
+        {
+            Heart heart = heartList[i];
+            //Checks whether hearts can add on the heal amount
+            int  missingFragments = MAX_FRAGMENT_AMOUNT - heart.GetFragmentsAmount();
+            if(healAmount > missingFragments)
+            {
+                // heart cannot 
+                healAmount -= missingFragments;
+                heart.Heal(missingFragments);
+            }
+            else
+            {
+                heart.Heal(healAmount);
+                //Stops Loop
+                break;
+            }
+
+            if (OnHealed != null) OnHealed(this, EventArgs.Empty);
+        }
+
     }
 
     //Resembles 1 Heart
@@ -84,6 +117,19 @@ public class HeartsHealthSystem
             }
         }
 
+        public void Heal(int healAmount)
+        {
+            if(fragments + healAmount > MAX_FRAGMENT_AMOUNT)
+            {
+                fragments = MAX_FRAGMENT_AMOUNT;
+
+            }
+            else
+            {
+                fragments += healAmount;
+            }
+
+        }
 
     }
 }

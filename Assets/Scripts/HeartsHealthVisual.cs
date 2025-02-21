@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -59,24 +60,37 @@ public class HeartsHealthVisual : MonoBehaviour
 
         
         heartsHealthSystem.OnDamaged += heartsHealthSystem_OnDamaged;
+        heartsHealthSystem.OnHealed += heartsHealthSystem_OnHealed;
 
 
     }
 
     private void heartsHealthSystem_OnDamaged(object sender, System.EventArgs e)
     {
-        // Hearts health system was damaged
+        //Hearts health system was damaged
+        RefreshAllHearts();
+    }
+
+    private void heartsHealthSystem_OnHealed(object sender, System.EventArgs e)
+    {
+        //Hearts health system was healed
+        RefreshAllHearts();
+    }
+
+    private void RefreshAllHearts()
+    {
 
         List<HeartsHealthSystem.Heart> heartList = heartsHealthSystem.GetHeartList();
 
-        for (int i = 0; i< heartImageList.Count; i++)
+        for (int i = 0; i < heartImageList.Count; i++)
         {
             HeartImage heartImage = heartImageList[i];
             HeartsHealthSystem.Heart heart = heartList[i];
             heartImage.SetHeartFraments(heart.GetFragmentsAmount());
-     
+
         }
     }
+
 
 
     private HeartImage CreateHeartImage(Vector2 anchoredPosition)
