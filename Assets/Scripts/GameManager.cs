@@ -14,13 +14,16 @@ public class GameManager : MonoBehaviour
     public void LoadNextRoom()
     {
         RoomIndex++;
-        Instantiate(Rooms[RoomIndex]);
+        //Instantiate(Rooms[RoomIndex]);
         CurrentRoom = Rooms[RoomIndex];
+        CurrentRoom.SetActive(true);
+
     }
 
     public void UnLoadCurrentRoom()
     {
-        Destroy(CurrentRoom);
+        //Destroy(CurrentRoom);
+        CurrentRoom.SetActive(false);
 
     }
 }
