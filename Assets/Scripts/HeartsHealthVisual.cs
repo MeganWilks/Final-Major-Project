@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class HeartsHealthVisual : MonoBehaviour
     [SerializeField] private Sprite fullHeartSprite;
     [SerializeField] private Sprite halfHeartSprite;
     [SerializeField] private Sprite emptyHeartSprite;
+
 
     [Header("Lists")]
 
@@ -55,6 +57,25 @@ public class HeartsHealthVisual : MonoBehaviour
         }
         #endregion
 
+        
+        heartsHealthSystem.OnDamaged += heartsHealthSystem_OnDamaged;
+
+
+    }
+
+    private void heartsHealthSystem_OnDamaged(object sender, System.EventArgs e)
+    {
+        // Hearts health system was damaged
+
+        List<HeartsHealthSystem.Heart> heartList = heartsHealthSystem.GetHeartList();
+
+        for (int i = 0; i< heartImageList.Count; i++)
+        {
+            HeartImage heartImage = heartImageList[i];
+            HeartsHealthSystem.Heart heart = heartList[i];
+            heartImage.SetHeartFraments(heart.GetFragmentsAmount());
+     
+        }
     }
 
 
