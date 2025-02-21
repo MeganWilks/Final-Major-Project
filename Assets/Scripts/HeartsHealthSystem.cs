@@ -11,6 +11,7 @@ public class HeartsHealthSystem
     //Events
     public event EventHandler OnDamaged;
     public event EventHandler OnHealed;
+    public event EventHandler OnDead;
 
     private List<Heart> heartList;
 
@@ -56,11 +57,19 @@ public class HeartsHealthSystem
 
        
         if (OnDamaged != null) OnDamaged(this, EventArgs.Empty);
+
+        if(IsDead())
+        {
+            if (OnDead != null) OnDead(this, EventArgs.Empty);
+
+        }
+    
         #endregion
     }
 
     public void Heal(int healAmount)
     {
+        #region Heal Loop
         // Goes through all the hearts
         for (int i = 0; i<heartList.Count; i++)
         {
@@ -82,12 +91,18 @@ public class HeartsHealthSystem
 
             if (OnHealed != null) OnHealed(this, EventArgs.Empty);
         }
+        #endregion
+    }
 
+    public bool IsDead()
+    {
+        return heartList[0].GetFragmentsAmount() == 0;
     }
 
     //Resembles 1 Heart
     public class Heart
     {
+        #region Heart
         private int fragments;
 
         public Heart (int fragments)
@@ -130,6 +145,6 @@ public class HeartsHealthSystem
             }
 
         }
-
+        #endregion
     }
 }

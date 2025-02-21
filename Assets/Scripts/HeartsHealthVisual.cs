@@ -59,19 +59,26 @@ public class HeartsHealthVisual : MonoBehaviour
         #endregion
 
         
-        heartsHealthSystem.OnDamaged += heartsHealthSystem_OnDamaged;
-        heartsHealthSystem.OnHealed += heartsHealthSystem_OnHealed;
+        heartsHealthSystem.OnDamaged += HeartsHealthSystem_OnDamaged;
+        heartsHealthSystem.OnHealed += HeartsHealthSystem_OnHealed;
+        heartsHealthSystem.OnDead += HeartsHealthSystem_OnDead;
 
 
     }
 
-    private void heartsHealthSystem_OnDamaged(object sender, System.EventArgs e)
+    private void HeartsHealthSystem_OnDead(object sender, System.EventArgs e)
+    {
+        // Hearts health system is dead
+
+    }
+
+    private void HeartsHealthSystem_OnDamaged(object sender, System.EventArgs e)
     {
         //Hearts health system was damaged
         RefreshAllHearts();
     }
 
-    private void heartsHealthSystem_OnHealed(object sender, System.EventArgs e)
+    private void HeartsHealthSystem_OnHealed(object sender, System.EventArgs e)
     {
         //Hearts health system was healed
         RefreshAllHearts();
