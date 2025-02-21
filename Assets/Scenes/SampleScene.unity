@@ -600,7 +600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Rooms:
   - {fileID: 137476485}
-  - {fileID: 0}
+  - {fileID: 1055217156}
   RoomIndex: 0
   CurrentRoom: {fileID: 137476485}
 --- !u!4 &1230146513
@@ -658,6 +658,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 137476486}
     m_Modifications:
+    - target: {fileID: 5467116936251950432, guid: 0029d824d81372c42a7c9ec6c60e969d,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1230146512}
     - target: {fileID: 5975554225966066146, guid: 0029d824d81372c42a7c9ec6c60e969d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -854,6 +859,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4754364103394429896, guid: 6657ad109867d744dac54042bc324f87,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1230146512}
     - target: {fileID: 9057708571754507939, guid: 6657ad109867d744dac54042bc324f87,
         type: 3}
       propertyPath: m_Name
