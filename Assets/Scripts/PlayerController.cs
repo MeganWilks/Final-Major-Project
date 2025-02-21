@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speedWalking;
     [SerializeField] private float speedCrouching;
     [SerializeField] private float speed;
+    [SerializeField] private float rotationSpeed;
 
     [Header("Player Sizing")]
 
@@ -89,6 +90,8 @@ public class PlayerController : MonoBehaviour
         Vector3 forward = transform.forward * vertical;
         Vector3 right = transform.right * horizontal;
         CharController.SimpleMove((forward + right) * speed);
+        Vector3 rotation = new Vector3(0, Input.GetAxisRaw("Horizontal") * rotationSpeed * Time.deltaTime, 0);
+        this.transform.Rotate(rotation);
 
     }
 
