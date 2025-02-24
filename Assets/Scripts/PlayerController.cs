@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     [Header ("Health_ Variables")]
     [SerializeField] private int healthValue = 3;
- 
+
 
     void Start()
     {
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
     private void SetCursor()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+       Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
@@ -121,8 +121,5 @@ public class PlayerController : MonoBehaviour
         }
         #endregion // No State
     }
-
-
-
   
 }
