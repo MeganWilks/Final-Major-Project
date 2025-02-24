@@ -12,11 +12,15 @@ public class Health: MonoBehaviour
     [SerializeField] Texture emptyHeart;
 
     [SerializeField] List<RawImage> heartList;
+    [SerializeField] int playerHealth = 10;
+
+
+    public static Health instance;
   
-    private void HeartUIUpdate(int health)
+    private void HeartUIUpdate()
     {
-        int fullHearts = Mathf.FloorToInt(health / 2);
-        bool halfHearts = health % 2 == 1;
+        int fullHearts = Mathf.FloorToInt(playerHealth / 2);
+        bool halfHearts = playerHealth % 2 == 1;
         for(int i = 0; i < fullHearts; i++)
         {
             heartList[i].texture = fullHeart;
@@ -43,14 +47,23 @@ public class Health: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public static void Damage(int damageAmount)
     {
+        instance.playerHealth -= damageAmount;
+        Debug.Log("health; " + instance.playerHealth);
+        instance.HeartUIUpdate();
 
-
-        
     }
-}
+
+
+
+  
+    }
+
