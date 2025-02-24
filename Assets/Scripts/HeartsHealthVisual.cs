@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using CodeMonkey;
+using CodeMonkey.Utils;
 
 public class HeartsHealthVisual : MonoBehaviour
 {
@@ -36,6 +38,7 @@ public class HeartsHealthVisual : MonoBehaviour
     private void Start()
     {
         #region Start
+        FunctionPeriodic.Create(HealingAnimatedPeriodic, 0.5f);
         heartsHealthSystem = new HeartsHealthSystem(3);
         SetHeartsHealthSystem(heartsHealthSystem);
         #endregion
@@ -75,7 +78,8 @@ public class HeartsHealthVisual : MonoBehaviour
     private void HeartsHealthSystem_OnDamaged(object sender, System.EventArgs e)
     {
         //Hearts health system was damaged
-        RefreshAllHearts();
+        //RefreshAllHearts();
+
     }
 
     private void HeartsHealthSystem_OnHealed(object sender, System.EventArgs e)
@@ -94,6 +98,26 @@ public class HeartsHealthVisual : MonoBehaviour
             HeartImage heartImage = heartImageList[i];
             HeartsHealthSystem.Heart heart = heartList[i];
             heartImage.SetHeartFraments(heart.GetFragmentsAmount());
+
+        }
+    }
+
+    private void HealingAnimatedPeriodic()
+    {
+
+        List<HeartsHealthSystem.Heart> heartList = heartsHealthSystem.GetHeartList();
+
+        for (int i = 0; i < heartImageList.Count; i++)
+        {
+            HeartImage heartImage = heartImageList[i];
+            HeartsHealthSystem.Heart heart = heartList[i];
+            if(heartImage.GetFragmentAmount() != heart.GetFragmentsAmount())
+            {
+                //Visual Doesnt agree with logic
+                heartImage.AddHeartVisualFragment();
+                break;
+            }
+
 
         }
     }
@@ -136,6 +160,7 @@ public class HeartsHealthVisual : MonoBehaviour
         [SerializeField] Image heartImage;
         [SerializeField] private HeartsHealthVisual heartsHealthVisual;
         private Image heartImageUI;
+        private int fragments;
 
         public HeartImage(Image heartImageUI)
         {
@@ -150,8 +175,9 @@ public class HeartsHealthVisual : MonoBehaviour
 
         }
 
-        public void  SetHeartFraments(int  fragments)
+        public void  SetHeartFraments(int fragments)
         {
+            this.fragments = fragments;
             
             switch (fragments)
             {
@@ -165,6 +191,17 @@ public class HeartsHealthVisual : MonoBehaviour
                     heartImage.sprite = heartsHealthVisual.fullHeartSprite;
                     break;
             }
+        }
+
+
+        public int GetFragmentAmount()
+        {
+            return fragments;
+        }
+
+        public void AddHeartVisualFragment()
+        {
+            SetHeartFraments(fragments +1);
         }
         #endregion
 
