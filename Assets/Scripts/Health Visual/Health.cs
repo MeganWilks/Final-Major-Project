@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class Health: MonoBehaviour
 {
+    [Header("Heart Images")]
+    [SerializeField] private Texture fullHeart;
+    [SerializeField] private Texture halfHeart;
+    [SerializeField] private Texture emptyHeart;
 
-    [SerializeField] Texture fullHeart;
-    [SerializeField] Texture halfHeart;
-    [SerializeField] Texture emptyHeart;
-
-    [SerializeField] List<RawImage> heartList;
-    [SerializeField] int playerHealth = 10;
+    [Header("Heart List")]
+    [SerializeField] private List<RawImage> heartList;
+    [SerializeField] private int playerHealth = 10;
 
 
     public static Health instance;
