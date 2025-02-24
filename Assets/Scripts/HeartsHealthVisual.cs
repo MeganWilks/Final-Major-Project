@@ -24,6 +24,18 @@ public class HeartsHealthVisual : MonoBehaviour
     [Header("Scripts")]
 
     [SerializeField] private HeartsHealthSystem heartsHealthSystem;
+
+    [Header("Conditions")]
+    [SerializeField] private bool isHealing;
+    [SerializeField] private bool fullyHealed;
+
+
+    [Header("Cusomise Heart Layout")]
+    [SerializeField] private int row = 0;
+    [SerializeField] private int column = 0;
+    [SerializeField] private int columnMax = 5;
+    [SerializeField] private float rowColumnSize = 30f;
+
     #endregion
 
     private void Awake()
@@ -39,7 +51,10 @@ public class HeartsHealthVisual : MonoBehaviour
     {
         #region Start
         FunctionPeriodic.Create(HealingAnimatedPeriodic, 0.5f);
-        heartsHealthSystem = new HeartsHealthSystem(3);
+
+        // CAN CHANGE NUMBER OF HEARTS HERE
+        heartsHealthSystem = new HeartsHealthSystem(10); 
+
         SetHeartsHealthSystem(heartsHealthSystem);
         #endregion
 
@@ -51,13 +66,21 @@ public class HeartsHealthVisual : MonoBehaviour
         this.heartsHealthSystem = heartsHealthSystem;
 
         List<HeartsHealthSystem.Heart> heartList = heartsHealthSystem.GetHeartList();
-        Vector2 heartAnchoredPosition = new Vector2(0, 0);
+        //Vector2 heartAnchoredPosition = new Vector2(0, 0);
 
         for (int i = 0; i < heartList.Count; i++)
         {
             HeartsHealthSystem.Heart heart = heartList[i];
+            Vector2 heartAnchoredPosition = new Vector2(column * rowColumnSize, row * rowColumnSize);
+
             CreateHeartImage(heartAnchoredPosition).SetHeartFraments(heart.GetFragmentsAmount());
-            heartAnchoredPosition += new Vector2(10, 0);
+            //heartAnchoredPosition += new Vector2(10, 0);
+            column++;
+            if(column > columnMax)
+            {
+                row++;
+                column = 0;
+            }
         }
         #endregion
 
@@ -68,17 +91,19 @@ public class HeartsHealthVisual : MonoBehaviour
 
 
     }
-
+    #region Events
     private void HeartsHealthSystem_OnDead(object sender, System.EventArgs e)
     {
         // Hearts health system is dead
-
+        CMDebug.TextPopupMouse("Dead");
     }
 
     private void HeartsHealthSystem_OnDamaged(object sender, System.EventArgs e)
     {
         //Hearts health system was damaged
         //RefreshAllHearts();
+        isHealing = true;
+
 
     }
 
@@ -87,10 +112,11 @@ public class HeartsHealthVisual : MonoBehaviour
         //Hearts health system was healed
         RefreshAllHearts();
     }
+    #endregion
 
     private void RefreshAllHearts()
     {
-
+        #region RefreshAllHearts Function
         List<HeartsHealthSystem.Heart> heartList = heartsHealthSystem.GetHeartList();
 
         for (int i = 0; i < heartImageList.Count; i++)
@@ -100,26 +126,38 @@ public class HeartsHealthVisual : MonoBehaviour
             heartImage.SetHeartFraments(heart.GetFragmentsAmount());
 
         }
+        #endregion
     }
 
     private void HealingAnimatedPeriodic()
     {
-
-        List<HeartsHealthSystem.Heart> heartList = heartsHealthSystem.GetHeartList();
-
-        for (int i = 0; i < heartImageList.Count; i++)
+        #region HealingAnimatedPeriodic Funtion
+        if (isHealing) // Making the Loop more efficient by adding a condition 
         {
-            HeartImage heartImage = heartImageList[i];
-            HeartsHealthSystem.Heart heart = heartList[i];
-            if(heartImage.GetFragmentAmount() != heart.GetFragmentsAmount())
+            bool fullyHealed = true;
+            List<HeartsHealthSystem.Heart> heartList = heartsHealthSystem.GetHeartList();
+
+            for (int i = 0; i < heartImageList.Count; i++)
             {
-                //Visual Doesnt agree with logic
-                heartImage.AddHeartVisualFragment();
-                break;
+                HeartImage heartImage = heartImageList[i];
+                HeartsHealthSystem.Heart heart = heartList[i];
+                if (heartImage.GetFragmentAmount() != heart.GetFragmentsAmount())
+                {
+                    //Visual Doesnt agree with logic
+                    heartImage.AddHeartVisualFragment();
+                    fullyHealed = false;
+                    break;
+                }
+
             }
 
-
+            if(fullyHealed)
+            {
+                isHealing = false;
+            }
         }
+        #endregion
+
     }
 
 
