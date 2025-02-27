@@ -6,35 +6,30 @@ using UnityEngine.EventSystems;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
+    #region Variables
     [Header("Player")]
-
     [SerializeField] private GameObject player;
     [SerializeField] private CapsuleCollider capsuleColliders;
     public CharacterController CharController; // Character Controller 
     private Vector3 movementDirection = Vector3.zero;
 
     [Header("Player Speeds")]
-
     [SerializeField] private float speedSprinting;
     [SerializeField] private float speedWalking;
     [SerializeField] private float speedCrouching;
     [SerializeField] private float speed;
 
     [Header("Player Sizing")]
-
     [SerializeField] private Vector3 crouchingSize;
     [SerializeField] private Vector3 playerSize;
 
     [Header("Player Stats")]
-
     [SerializeField] private int attackPower;
 
     [Header("Camera")]
-
     [SerializeField] private Camera camera_;
 
     [Header("IsPlayer Conditions")]
-
     [SerializeField] private bool isJumping;
     [SerializeField] private bool isCrouching;
     [SerializeField] private bool isAttacking;
@@ -53,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Rotation Variables")]
     [SerializeField] private float rotationSpeed = 90f;
-
+    #endregion
 
     void Start()
     {
