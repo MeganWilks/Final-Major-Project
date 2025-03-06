@@ -63,6 +63,13 @@ public class Health: MonoBehaviour
 
     }
 
+    public static void Heal(int healAmount)
+    {
+        instance.playerHealth += healAmount;
+        Debug.Log("health " + instance.playerHealth);
+        instance.HeartUIUpdate();
+    }
+
 
 
   
