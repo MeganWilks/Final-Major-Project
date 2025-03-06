@@ -6,14 +6,17 @@ public class NextLevel : MonoBehaviour
 {
     [Header("Game Manager Script")]
     [SerializeField] GameManager gameManager;
+  
     // Start is called before the first frame update
 
 
     private void OnTriggerEnter(Collider other)
     {
-       gameManager.UnLoadCurrentRoom();
-       gameManager.LoadNextRoom();
+        if(other == gameObject.CompareTag("Door"))
+        {
+            gameManager.UnLoadCurrentRoom();
+            gameManager.LoadNextRoom();
 
-        
+        }
     }
 }
