@@ -7,11 +7,10 @@ public class InventoryUI : MonoBehaviour
 {
 
     [SerializeField] private TextMeshProUGUI coinText;
-    // Start is called before the first frame update
+   
     void Start()
     {
         coinText = GetComponent<TextMeshProUGUI>();
-        
     }
 
     public void UpdateCoinText(PlayerInventory playerInventory)
@@ -19,7 +18,4 @@ public class InventoryUI : MonoBehaviour
         coinText.text = playerInventory.numOfCoin.ToString();
 
     }
-
-    
-    
 }
