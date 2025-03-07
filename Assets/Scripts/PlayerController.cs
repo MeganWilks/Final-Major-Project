@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// This is the Player Controllers Class where it controls the player movement
@@ -10,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private CapsuleCollider capsuleColliders;
     public CharacterController CharController; // Character Controller 
+    private Vector3 movementDirection = Vector3.zero;
 
     [Header("Player Speeds")]
 
@@ -26,7 +28,6 @@ public class PlayerController : MonoBehaviour
     [Header("Player Stats")]
 
     [SerializeField] private int attackPower;
-
 
     [Header("Camera")]
 
@@ -50,6 +51,8 @@ public class PlayerController : MonoBehaviour
     [Header("Player Animation")]
     [SerializeField] private Animator playerAnimator;
 
+    [Header("Rotation Variables")]
+    [SerializeField] private float rotationSpeed = 90f;
 
 
     void Start()
@@ -73,6 +76,7 @@ public class PlayerController : MonoBehaviour
         #region playerControllerInput
 
         PlayerMovement();
+        PlayerRotation();
 
         KeyPressedMovement();
 
@@ -85,11 +89,22 @@ public class PlayerController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
+        // Normalized means that the Direction is the same but it stays like this a little longer
+        movementDirection = new Vector3(horizontal, 0, vertical).normalized;
 
-        Vector3 forward = transform.forward * vertical;
-        Vector3 right = transform.right * horizontal;
-        CharController.SimpleMove((forward + right) * speed);
+        if (movementDirection.sqrMagnitude > 0.01f)
+        {
+            CharController.SimpleMove(movementDirection * speed);
+        }
+    }
 
+    private void PlayerRotation()
+    {
+        if (movementDirection.sqrMagnitude > 0.01f)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
     }
 
     private void KeyPressedMovement()
