@@ -129,6 +129,16 @@ public class PlayerController : MonoBehaviour
 
         #endregion // Crouch
 
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            isSprinting = false;
+            isCrouching = false;
+            speed = speedWalking;
+            player.transform.localScale = playerSize;
+
+        }
+
         #region no state
         else
         {
