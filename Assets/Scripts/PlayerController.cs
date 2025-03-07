@@ -100,18 +100,28 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerRotation()
     {
+        #region Player Rotation
         if (movementDirection.sqrMagnitude > 0.01f)
         {
             Quaternion targetRotation = Quaternion.LookRotation(movementDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
+        #endregion
     }
+
+    private void PlayerAttack()
+    {
+        playerAnimator.SetBool("IsAttacking", true);
+        
+    }
+
 
     private void KeyPressedMovement()
     {
         #region sprint
         if (Input.GetKey(KeyCode.LeftShift))
         {
+            playerAnimator.SetBool("IsNoState", false);
             speed = speedSprinting;
             isSprinting = true;
         }
@@ -130,18 +140,31 @@ public class PlayerController : MonoBehaviour
         #endregion // Crouch
 
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        else if (Input.GetKeyDown(KeyCode.R))
         {
+            playerAnimator.SetBool("IsNoState", false);
+
+            isAttacking = true;
             isSprinting = false;
             isCrouching = false;
             speed = speedWalking;
             player.transform.localScale = playerSize;
+            PlayerAttack();
 
         }
+
+        else if(Input.GetKeyUp(KeyCode.R))
+        {
+            
+            playerAnimator.SetBool("IsAttacking", false);
+        }
+
 
         #region no state
         else
         {
+            playerAnimator.SetBool("IsNoState", true);
+            isAttacking = false;
             isSprinting = false;
             isCrouching = false;
             speed = speedWalking;
