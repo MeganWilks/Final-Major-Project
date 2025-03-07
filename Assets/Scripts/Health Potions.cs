@@ -8,6 +8,7 @@ public class HealthPotions : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Health.Heal(1);
+        gameObject.SetActive(false);
     }
 
 }
