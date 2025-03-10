@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class CameraManager : MonoBehaviour
 {
@@ -12,7 +13,20 @@ public class CameraManager : MonoBehaviour
 
     void Update()
     {
-        Vector3 newPos = playerPrefab.position + offset;
-        transform.position = newPos;
+
+        transform.position = playerPrefab.position + offset;
+        
+
+        
+
+        //Vector3 newPos = playerPrefab.position + offset;
+        //transform.position = newPos;
     }
 }
+
+
+
+
+
+   
+
