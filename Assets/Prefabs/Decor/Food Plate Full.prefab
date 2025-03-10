@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1894488963097722909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4830687794553667536}
+  m_Layer: 0
+  m_Name: Food Plate Full
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4830687794553667536
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894488963097722909}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6688289610510836246}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6582902059166746109
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4830687794553667536}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f1b49a62aba6afb449567713011942a2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.94783
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1b49a62aba6afb449567713011942a2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.862514
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1b49a62aba6afb449567713011942a2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.9639864
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1b49a62aba6afb449567713011942a2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.87022644
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1b49a62aba6afb449567713011942a2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1b49a62aba6afb449567713011942a2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.49265203
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1b49a62aba6afb449567713011942a2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1b49a62aba6afb449567713011942a2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1b49a62aba6afb449567713011942a2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -59.03
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1b49a62aba6afb449567713011942a2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f1b49a62aba6afb449567713011942a2,
+        type: 3}
+      propertyPath: m_Name
+      value: plateFull
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1b49a62aba6afb449567713011942a2, type: 3}
+--- !u!4 &6688289610510836246 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f1b49a62aba6afb449567713011942a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 6582902059166746109}
+  m_PrefabAsset: {fileID: 0}
