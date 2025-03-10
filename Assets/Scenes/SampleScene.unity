@@ -1082,16 +1082,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1741152674}
     m_Modifications:
+    - target: {fileID: 1675057460668340762, guid: 5c1de76600b3f41458260822b14e0e58,
+        type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 385035878}
     - target: {fileID: 1981882802755986519, guid: 5c1de76600b3f41458260822b14e0e58,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2392997912016517373, guid: 5c1de76600b3f41458260822b14e0e58,
-        type: 3}
-      propertyPath: OnCoinsCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 124233913}
     - target: {fileID: 5063653702584705648, guid: 5c1de76600b3f41458260822b14e0e58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1142,6 +1142,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6636623284835323747, guid: 5c1de76600b3f41458260822b14e0e58,
+        type: 3}
+      propertyPath: OnCoinsCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 124233913}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
