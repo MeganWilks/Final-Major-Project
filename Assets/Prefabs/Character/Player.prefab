@@ -84,7 +84,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8905563833382836718}
   - {fileID: 2447422678405537038}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -100,6 +99,7 @@ GameObject:
   - component: {fileID: 7840080185591653026}
   - component: {fileID: 2453671380976569617}
   - component: {fileID: 6636623284835323747}
+  - component: {fileID: 5910035530468283025}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -120,6 +120,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 8905563833382836718}
   - {fileID: 6738661977771736562}
   - {fileID: 1286277612824646296}
   m_Father: {fileID: 5063653702584705648}
@@ -210,6 +211,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5910035530468283025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4533657062286580111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 209b483421655de43ab185bc5be821eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullHeart: {fileID: 2800000, guid: ba07ee9e4d52a0b4487d1fc176138be6, type: 3}
+  halfHeart: {fileID: 2800000, guid: 7497ecc4b8b70554cad09a18f50ae4d9, type: 3}
+  emptyHeart: {fileID: 2800000, guid: b220343a1fd8be1478922ab628b0b339, type: 3}
+  heartList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerHealth: 10
 --- !u!1 &6931122494777375752
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +401,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9182408053412665235}
-  m_Father: {fileID: 5063653702584705648}
+  m_Father: {fileID: 2447422678405537038}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1675057460668340762
 MonoBehaviour:
@@ -393,7 +416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 6738661977771736562}
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 0.5, y: 0.5, z: 0.5}
 --- !u!1001 &6489177030712531481
 PrefabInstance:
   m_ObjectHideFlags: 0
