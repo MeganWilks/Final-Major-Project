@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerInventory : MonoBehaviour
+public class PlayerCoinInventory : MonoBehaviour
 {
     //Coin Settings
     [SerializeField] public int numOfCoin { get; private set; }
 
     [Header("Events")]
-    [SerializeField] public UnityEvent<PlayerInventory> OnCoinsCollected;
+    [SerializeField] public UnityEvent<PlayerCoinInventory> OnCoinsCollected;
 
     public void CoinsCollected()
     {

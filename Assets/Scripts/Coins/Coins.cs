@@ -6,11 +6,11 @@ public class Coins : MonoBehaviour
 {
 
     [Header("Scripts")]
-    PlayerInventory playerInventory;
+    PlayerCoinInventory playerInventory;
     private void OnTriggerEnter(Collider other)
     {
 
-        PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
+        PlayerCoinInventory playerInventory = other.GetComponent<PlayerCoinInventory>();
 
         if(playerInventory != null )
         {
