@@ -85,7 +85,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2447422678405537038}
-  - {fileID: 6051893963445132717}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2997912707207644521
@@ -119,7 +118,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9182408053412665235}
-  m_Father: {fileID: 5063653702584705648}
+  m_Father: {fileID: 2447422678405537038}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5394347079660576054
 MonoBehaviour:
@@ -170,6 +169,7 @@ Transform:
   m_Children:
   - {fileID: 6738661977771736562}
   - {fileID: 1286277612824646296}
+  - {fileID: 6051893963445132717}
   m_Father: {fileID: 5063653702584705648}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &7840080185591653026
