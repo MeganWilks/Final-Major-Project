@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[System.Serializable]
 public abstract class ItemClass : ScriptableObject // ROOT CLASS
 {
     [Header("Item Profile")] // Data shared across every item
     public string itemName;
     public Sprite itemIcon;
+    public bool isStackable = true;
 
 
     public abstract ItemClass GetItem();
