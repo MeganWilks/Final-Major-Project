@@ -312,9 +312,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95984e290833c7540aff7004f2a4a541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemToAdd: {fileID: 11400000, guid: b6dab5040cb863148a193568cda30d63, type: 2}
+  itemToRemove: {fileID: 11400000, guid: ebb69c9f52e730b4d95fd28fa66b43ae, type: 2}
   items:
   - {fileID: 11400000, guid: ebb69c9f52e730b4d95fd28fa66b43ae, type: 2}
-  - {fileID: 11400000, guid: b6dab5040cb863148a193568cda30d63, type: 2}
 --- !u!4 &337147667
 Transform:
   m_ObjectHideFlags: 0
