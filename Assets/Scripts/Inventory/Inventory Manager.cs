@@ -31,6 +31,7 @@ public class InventoryManager : MonoBehaviour
     public void Update()
     {
         ChangeSelection(selectedSlotIndex);
+        ChangeSelectionKeys();
     }
     public void Start()
     {
@@ -193,6 +194,24 @@ public class InventoryManager : MonoBehaviour
         //Setting New Index
         selectedSlotIndex = newIndex;
         hotbarSelector.transform.SetParent(slots[newIndex].transform, false);
+
+    }
+
+    public  void ChangeSelectionKeys()
+    {
+        if(Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            ChangeSelection(selectedSlotIndex + 1);
+
+        }
+        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            ChangeSelection(selectedSlotIndex - 1);
+        }
+        else
+        {
+            ChangeSelection(selectedSlotIndex);
+        }
 
     }
 }
