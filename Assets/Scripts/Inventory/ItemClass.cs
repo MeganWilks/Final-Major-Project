@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public abstract class ItemClass : ScriptableObject // ROOT CLASS
+public class ItemClass : ScriptableObject // ROOT CLASS
 {
     [Header("Item Profile")] // Data shared across every item
     public string itemName;
@@ -12,11 +12,16 @@ public abstract class ItemClass : ScriptableObject // ROOT CLASS
     public bool isStackable = true;
 
 
-    public abstract ItemClass GetItem();
-    public abstract ToolClass GetTool();
-    public abstract MiscClass GetMisc();
+    public virtual ItemClass GetItem() { return this; }
+    public virtual ToolClass GetTool() { return null; }
+    public virtual MiscClass GetMisc() { return null; }
 
-    
+    public virtual void Use(PlayerController caller)
+    {
+        Debug.Log("Use Item");
+    }
 
-    
+
+
+
 }

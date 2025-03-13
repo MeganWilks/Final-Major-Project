@@ -13,7 +13,7 @@ public class ToolClass : ItemClass
         sword,
         bow
     }
-    public override ItemClass GetItem() { return this; }
+    
     public override ToolClass GetTool() { return this; }
-    public  override MiscClass GetMisc() { return null; }
+    
 }

@@ -15,6 +15,9 @@ public class InventoryManager : MonoBehaviour
     [Header("Selected Slot Tracker")]
     [SerializeField] private int selectedSlotIndex = 0;
 
+    [Header("Selected Item Class")]
+    [SerializeField] public ItemClass selectedItem;
+
     [Header("Item Slots Object")]
     [SerializeField] private GameObject itemSlots;
 
@@ -30,8 +33,10 @@ public class InventoryManager : MonoBehaviour
 
     public void Update()
     {
+        #region Update
         ChangeSelection(selectedSlotIndex);
         ChangeSelectionKeys();
+        #endregion
     }
     public void Start()
     {
@@ -179,6 +184,7 @@ public class InventoryManager : MonoBehaviour
 
     public void ChangeSelection(int newIndex)
     {
+        #region Change Selection
         //Makes sure that the inventory can wrap around and not let the index go out of range
         if (newIndex < 0)
         {
@@ -188,18 +194,21 @@ public class InventoryManager : MonoBehaviour
         {
             newIndex = 0;
         }
+        
 
 
-       
+
         //Setting New Index
         selectedSlotIndex = newIndex;
         hotbarSelector.transform.SetParent(slots[newIndex].transform, false);
-
+        selectedItem = items[newIndex].GetItem();
+        #endregion
     }
 
     public  void ChangeSelectionKeys()
     {
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        #region Change SelectionKeys
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             ChangeSelection(selectedSlotIndex + 1);
 
@@ -212,6 +221,7 @@ public class InventoryManager : MonoBehaviour
         {
             ChangeSelection(selectedSlotIndex);
         }
+        #endregion
 
     }
 }

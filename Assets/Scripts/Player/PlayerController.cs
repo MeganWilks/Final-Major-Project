@@ -54,6 +54,10 @@ public class PlayerController : MonoBehaviour
     [Header("Rotation Variables")]
     [SerializeField] private float rotationSpeed = 90f;
 
+    [Header("Inventory Variables")]
+    
+    [SerializeField] public InventoryManager inventoryManager;
+
 
     void Start()
     {
@@ -121,12 +125,18 @@ public class PlayerController : MonoBehaviour
 
 
         #region crouch
-        else if (Input.GetKey(KeyCode.E))
+        else if (Input.GetKey(KeyCode.C))
         {
             isCrouching = true;
             isSprinting = false;
             speed = speedCrouching;
             player.transform.localScale = crouchingSize;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            //Use Item
+            inventoryManager.selectedItem.Use(this);
         }
 
         #endregion // Crouch
@@ -141,6 +151,8 @@ public class PlayerController : MonoBehaviour
 
         }
         #endregion // No State
+
+        
     }
 
 
