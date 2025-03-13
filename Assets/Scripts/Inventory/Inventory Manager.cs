@@ -9,19 +9,32 @@ using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class InventoryManager : MonoBehaviour
 {
+    [Header("Selector Object")]
+    [SerializeField] private GameObject hotbarSelector;
 
+    [Header("Selected Slot Tracker")]
+    [SerializeField] private int selectedSlotIndex = 0;
+
+    [Header("Item Slots Object")]
     [SerializeField] private GameObject itemSlots;
 
     [Header("Inventory Add and Remove")]
     [SerializeField] private ItemClass itemToAdd;
     [SerializeField] private ItemClass itemToRemove;
 
+    [Header("Item Slots List")]
     [SerializeField] public List<SlotClass> items = new List<SlotClass>();
+
      private GameObject[] slots;
 
 
+    public void Update()
+    {
+        ChangeSelection(selectedSlotIndex);
+    }
     public void Start()
     {
+        #region Start
         slots = new GameObject[itemSlots.transform.childCount];
         // Set all slots
         for(int i = 0; i < itemSlots.transform.childCount; i++)
@@ -33,12 +46,14 @@ public class InventoryManager : MonoBehaviour
 
         Add(itemToAdd);
         Remove(itemToRemove);
+        #endregion
     }
 
 
     public void RefreshUI()
     {
-        for(int i = 0; i <slots.Length; i++)
+        #region Refresh UI
+        for (int i = 0; i <slots.Length; i++)
         {
             try
             {
@@ -65,10 +80,12 @@ public class InventoryManager : MonoBehaviour
 
 
         }
-        
+
+        #endregion
     }
     public bool Add(ItemClass item)
     {
+        #region Add Item to Hotbar
         //Check Inventory to see if it contains item
 
 
@@ -96,6 +113,7 @@ public class InventoryManager : MonoBehaviour
 
         RefreshUI();
         return true;
+        #endregion
     }
 
     public bool Remove(ItemClass item)
@@ -142,9 +160,9 @@ public class InventoryManager : MonoBehaviour
 
     public SlotClass Contains(ItemClass item)
     {
+        #region Contains
 
-
-        foreach(SlotClass slot in items)
+        foreach (SlotClass slot in items)
         {
             if(slot.GetItem() == item)
             {
@@ -154,5 +172,27 @@ public class InventoryManager : MonoBehaviour
         }
 
         return null;
+        #endregion
+    }
+
+
+    public void ChangeSelection(int newIndex)
+    {
+        //Makes sure that the inventory can wrap around and not let the index go out of range
+        if (newIndex < 0)
+        {
+            newIndex = slots.Length - 1;
+        }
+        if (newIndex >= slots.Length)
+        {
+            newIndex = 0;
+        }
+
+
+       
+        //Setting New Index
+        selectedSlotIndex = newIndex;
+        hotbarSelector.transform.SetParent(slots[newIndex].transform, false);
+
     }
 }
