@@ -16,3 +16,4 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: 95f869ac07a68fb44a31ef60a69dee23, type: 2}
   isStackable: 0
   toolType: 0
+  sword: {fileID: 6362127596716608021, guid: 1c412ed578277044fa31aa0d1676f1ff, type: 3}
