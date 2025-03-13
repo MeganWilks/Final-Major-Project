@@ -311,12 +311,6 @@ MonoBehaviour:
     quantity: 3
   - item: {fileID: 11400000, guid: dda430985bad77c4aacf66e9a654fab5, type: 2}
     quantity: 1
-  - item: {fileID: 11400000, guid: dda430985bad77c4aacf66e9a654fab5, type: 2}
-    quantity: 1
-  - item: {fileID: 11400000, guid: dda430985bad77c4aacf66e9a654fab5, type: 2}
-    quantity: 1
-  - item: {fileID: 11400000, guid: dda430985bad77c4aacf66e9a654fab5, type: 2}
-    quantity: 1
 --- !u!4 &165378297
 Transform:
   m_ObjectHideFlags: 0

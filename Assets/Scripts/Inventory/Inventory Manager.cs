@@ -200,7 +200,16 @@ public class InventoryManager : MonoBehaviour
 
         //Setting New Index
         selectedSlotIndex = newIndex;
-        selectedItem = items[newIndex].GetItem();
+
+        if (selectedSlotIndex > 0 & selectedSlotIndex <items.Count)
+        {
+            selectedItem = items[newIndex].GetItem();
+        }
+        else
+        {
+            selectedItem = null;
+        }
+        
         hotbarSelector.transform.SetParent(slots[newIndex].transform, false);
         
         #endregion
