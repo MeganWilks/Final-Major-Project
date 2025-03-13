@@ -18,7 +18,7 @@ public class ItemClass : ScriptableObject // ROOT CLASS
 
     public virtual void Use(PlayerController caller)
     {
-        Debug.Log("Use Item");
+        Debug.Log("Use Item"); // All Items will do this
     }
 
 

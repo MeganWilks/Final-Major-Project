@@ -304,18 +304,18 @@ MonoBehaviour:
   selectedSlotIndex: 1
   selectedItem: {fileID: 0}
   itemSlots: {fileID: 1312687766}
-  itemToAdd: {fileID: 11400000, guid: ebb69c9f52e730b4d95fd28fa66b43ae, type: 2}
+  itemToAdd: {fileID: 0}
   itemToRemove: {fileID: 11400000, guid: b6dab5040cb863148a193568cda30d63, type: 2}
   items:
   - item: {fileID: 11400000, guid: b6dab5040cb863148a193568cda30d63, type: 2}
     quantity: 3
-  - item: {fileID: 11400000, guid: ebb69c9f52e730b4d95fd28fa66b43ae, type: 2}
+  - item: {fileID: 11400000, guid: dda430985bad77c4aacf66e9a654fab5, type: 2}
     quantity: 1
-  - item: {fileID: 11400000, guid: ebb69c9f52e730b4d95fd28fa66b43ae, type: 2}
+  - item: {fileID: 11400000, guid: dda430985bad77c4aacf66e9a654fab5, type: 2}
     quantity: 1
-  - item: {fileID: 11400000, guid: ebb69c9f52e730b4d95fd28fa66b43ae, type: 2}
+  - item: {fileID: 11400000, guid: dda430985bad77c4aacf66e9a654fab5, type: 2}
     quantity: 1
-  - item: {fileID: 11400000, guid: ebb69c9f52e730b4d95fd28fa66b43ae, type: 2}
+  - item: {fileID: 11400000, guid: dda430985bad77c4aacf66e9a654fab5, type: 2}
     quantity: 1
 --- !u!4 &165378297
 Transform:

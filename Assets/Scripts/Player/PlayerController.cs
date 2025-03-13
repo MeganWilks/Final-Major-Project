@@ -136,7 +136,11 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.E))
         {
             //Use Item
-            inventoryManager.selectedItem.Use(this);
+            if(inventoryManager.selectedItem != null)
+            {
+                inventoryManager.selectedItem.Use(this);
+            }
+
         }
 
         #endregion // Crouch
