@@ -231,6 +231,7 @@ MonoBehaviour:
   healthValue: 3
   playerAnimator: {fileID: 155160529605777691}
   rotationSpeed: 200
+  inventoryManager: {fileID: 0}
 --- !u!114 &6636623284835323747
 MonoBehaviour:
   m_ObjectHideFlags: 0
