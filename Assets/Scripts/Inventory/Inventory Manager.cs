@@ -30,6 +30,8 @@ public class InventoryManager : MonoBehaviour
 
      private GameObject[] slots;
 
+    public static InventoryManager instance;
+
 
     public void Update()
     {
@@ -40,6 +42,7 @@ public class InventoryManager : MonoBehaviour
     }
     public void Start()
     {
+        instance = this;
         #region Start
         slots = new GameObject[itemSlots.transform.childCount];
         // Set all slots

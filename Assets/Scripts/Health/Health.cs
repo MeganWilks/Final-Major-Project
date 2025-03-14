@@ -58,6 +58,7 @@ public class Health: MonoBehaviour
     public static void Damage(int damageAmount)
     {
         instance.playerHealth -= damageAmount;
+        Mathf.Clamp(instance.playerHealth, 0, 10);
         Debug.Log("health; " + instance.playerHealth);
         instance.HeartUIUpdate();
 
@@ -66,6 +67,7 @@ public class Health: MonoBehaviour
     public static void Heal(int healAmount)
     {
         instance.playerHealth += healAmount;
+        Mathf.Clamp(instance.playerHealth, 0, 10);
         Debug.Log("health " + instance.playerHealth);
         instance.HeartUIUpdate();
     }
