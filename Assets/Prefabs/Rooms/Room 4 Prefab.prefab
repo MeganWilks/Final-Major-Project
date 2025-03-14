@@ -1592,7 +1592,8 @@ PrefabInstance:
       value: Door Cage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8234548778428021860, guid: d6c6c18c1945d684aaced392ff8b7ee8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6c6c18c1945d684aaced392ff8b7ee8, type: 3}
