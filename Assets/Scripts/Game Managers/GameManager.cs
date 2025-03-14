@@ -27,8 +27,11 @@ public class GameManager : MonoBehaviour
         CurrentRoom.SetActive(true);
         cam.transform.position = Rooms[RoomIndex].cameraPos;
         cam.orthographicSize = Rooms[RoomIndex].cameraSize;
-        PlayerDelay();
-        
+        playerPos.GetComponent<CharacterController>().enabled = false;
+        playerPos.transform.position = Rooms[RoomIndex].playerPos;
+        playerPos.GetComponent<CharacterController>().enabled = true;
+        //PlayerDelay();
+
 
     }
 
@@ -39,12 +42,12 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private IEnumerator PlayerDelay()
-    {
-        yield return new WaitForSeconds(3);
-        playerPos.transform.position = Rooms[RoomIndex].playerPos;
+   // private IEnumerator PlayerDelay()
+    //{
+    //    yield return new WaitForSeconds(3);
+    //    playerPos.transform.position = Rooms[RoomIndex].playerPos;
 
-    }
+    //}
         
 
 }
