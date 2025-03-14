@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject CurrentRoom;
     [SerializeField] public Camera cam;
     [SerializeField] public GameObject playerPos;
+    
+
 
     public void LoadNextRoom()
     {
@@ -24,7 +27,8 @@ public class GameManager : MonoBehaviour
         CurrentRoom.SetActive(true);
         cam.transform.position = Rooms[RoomIndex].cameraPos;
         cam.orthographicSize = Rooms[RoomIndex].cameraSize;
-        playerPos.transform.position = Rooms[RoomIndex].playerPos;
+        PlayerDelay();
+        
 
     }
 
@@ -34,6 +38,15 @@ public class GameManager : MonoBehaviour
         CurrentRoom.SetActive(false);
 
     }
+
+    private IEnumerator PlayerDelay()
+    {
+        yield return new WaitForSeconds(3);
+        playerPos.transform.position = Rooms[RoomIndex].playerPos;
+
+    }
+        
+
 }
 
 [Serializable]
