@@ -447,11 +447,9 @@ MonoBehaviour:
   selectedSlotIndex: 1
   selectedItem: {fileID: 0}
   itemSlots: {fileID: 1312687766}
-  itemToAdd: {fileID: 11400000, guid: 0970161449105f549af1d81d09eba421, type: 2}
-  itemToRemove: {fileID: 11400000, guid: dda430985bad77c4aacf66e9a654fab5, type: 2}
+  itemToAdd: {fileID: 0}
+  itemToRemove: {fileID: 0}
   items:
-  - item: {fileID: 11400000, guid: b6dab5040cb863148a193568cda30d63, type: 2}
-    quantity: 0
   - item: {fileID: 11400000, guid: dda430985bad77c4aacf66e9a654fab5, type: 2}
     quantity: 1
 --- !u!4 &165378297
@@ -2427,21 +2425,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 658541968}
     m_Modifications:
-    - target: {fileID: 979526485584807775, guid: 0029d824d81372c42a7c9ec6c60e969d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.0699997
-      objectReference: {fileID: 0}
-    - target: {fileID: 979526485584807775, guid: 0029d824d81372c42a7c9ec6c60e969d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.7579975
-      objectReference: {fileID: 0}
-    - target: {fileID: 979526485584807775, guid: 0029d824d81372c42a7c9ec6c60e969d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -6.43
-      objectReference: {fileID: 0}
     - target: {fileID: 991583653325376473, guid: 0029d824d81372c42a7c9ec6c60e969d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2497,35 +2480,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1230146512}
-    - target: {fileID: 6778286088875170051, guid: 0029d824d81372c42a7c9ec6c60e969d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 6778286088875170051, guid: 0029d824d81372c42a7c9ec6c60e969d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.94
-      objectReference: {fileID: 0}
     - target: {fileID: 7037377339547645414, guid: 0029d824d81372c42a7c9ec6c60e969d,
         type: 3}
       propertyPath: m_Name
       value: ' Room 1 Prefab'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7037377339547645414, guid: 0029d824d81372c42a7c9ec6c60e969d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8151612626471738376, guid: 0029d824d81372c42a7c9ec6c60e969d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8151612626471738376, guid: 0029d824d81372c42a7c9ec6c60e969d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.99
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

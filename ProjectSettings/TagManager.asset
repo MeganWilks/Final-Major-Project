@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coins
   - Door
+  - Health Potion
   layers:
   - Default
   - TransparentFX

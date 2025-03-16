@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Bow+ Arrows
   m_EditorClassIdentifier: 
   itemName: Bow+Arrows
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 13bf1676c90b12544b498320d4cb5b5a, type: 2}
   isStackable: 1
   toolType: 1

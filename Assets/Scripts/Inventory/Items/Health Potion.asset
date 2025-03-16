@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436151bc8f30deb4c91b9c2227456538, type: 3}
   m_Name: Health Potion
   m_EditorClassIdentifier: 
-  itemName: 
-  itemIcon: {fileID: 0}
+  itemName: Health Potion
+  itemIcon: {fileID: 21300000, guid: 1a68ba2fb6ba51a40b7d460ee2c4671b, type: 2}
   isStackable: 1
-  HealthAdded: 0
