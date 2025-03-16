@@ -1,5 +1,4 @@
 using Microsoft.Unity.VisualStudio.Editor;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -60,7 +59,7 @@ public class Health: MonoBehaviour
     {
         
         instance.playerHealth -= damageAmount;
-        Mathf.Clamp(instance.playerHealth, 10, 0);
+        instance.playerHealth =  Mathf.Clamp(instance.playerHealth, 0, 10);
         Debug.Log("health; " + instance.playerHealth);
         instance.HeartUIUpdate();
 
@@ -70,7 +69,7 @@ public class Health: MonoBehaviour
     {
         
         instance.playerHealth += healAmount;
-        Mathf.Clamp(instance.playerHealth, 0, 10);
+        instance.playerHealth = Mathf.Clamp(instance.playerHealth, 0, 10);
         Debug.Log("health " + instance.playerHealth);
         instance.HeartUIUpdate();
     }
