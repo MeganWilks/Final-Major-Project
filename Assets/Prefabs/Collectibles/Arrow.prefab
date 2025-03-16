@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2951699138008500094}
   - component: {fileID: 2281639619066420194}
+  - component: {fileID: -2441058504950586114}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -54,6 +55,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.349165, y: 0.3073597, z: 0.5858996}
   m_Center: {x: 7.6637535, y: -4.4366198, z: 3.452715}
+--- !u!114 &-2441058504950586114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836093830951533771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd845fe4dde91241b553bca11060bd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 0970161449105f549af1d81d09eba421, type: 2}
 --- !u!1001 &8006225393692325358
 PrefabInstance:
   m_ObjectHideFlags: 0
