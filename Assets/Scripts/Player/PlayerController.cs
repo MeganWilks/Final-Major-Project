@@ -131,8 +131,11 @@ public class PlayerController : MonoBehaviour
             isSprinting = false;
             speed = speedCrouching;
             player.transform.localScale = crouchingSize;
+            
         }
+        #endregion
 
+        #region Use Item
         else if (Input.GetKeyDown(KeyCode.E))
         {
             //Use Item

@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6055121934746259045}
   - component: {fileID: 4081888503560655953}
-  - component: {fileID: 469838002647808587}
+  - component: {fileID: -5270257061734889006}
   m_Layer: 0
   m_Name: Health Potion
-  m_TagString: Untagged
+  m_TagString: Health Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +55,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0609486, y: 1.1082933, z: 0.967705}
   m_Center: {x: -1.9248799, y: 0.54910696, z: 0.016147494}
---- !u!114 &469838002647808587
+--- !u!114 &-5270257061734889006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

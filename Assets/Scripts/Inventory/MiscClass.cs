@@ -4,15 +4,26 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "new Tool Class", menuName = "Item/Misc")]
 public class MiscClass : ItemClass
 {
-    [Header("Misc")]
-    [SerializeField] private int HealthAdded;
-
 
     public override void Use(PlayerController caller)
     {
+
         base.Use(caller);
-        Debug.Log("Consume Item");
         caller.inventoryManager.Remove(this);
+        if (itemName == "Health Potion")
+        {
+            Health.Heal(10);
+            
+        }
+        else
+        {
+            Debug.Log("Consume Item");
+        }
     }
+        
+
+        
+        
+    
     public override MiscClass GetMisc() { return this;}
 }
