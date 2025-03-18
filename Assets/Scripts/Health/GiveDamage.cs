@@ -8,7 +8,22 @@ public class GiveDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Health.Damage(1);
+        if(other.gameObject.CompareTag("Player"))
+        {
+            Health.Damage(1);
+        }
+
+      
+        
+            
+        
+            
+
+        
+                
+
+       
+        
     }
 
 
