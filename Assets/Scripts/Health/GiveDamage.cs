@@ -11,6 +11,7 @@ public class GiveDamage : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             Health.Damage(1);
+            Destroy(gameObject);
         }
 
       

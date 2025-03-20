@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 2059442297123680176}
   - component: {fileID: 1513207818376867010}
   - component: {fileID: 7872415211051505883}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Floor Panel Large (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 6795703247241332463}
   - component: {fileID: 3137854005018452057}
   - component: {fileID: 702916125332280084}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Floor Panel Large (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1670,7 +1670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 901022755057033507}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2214,7 +2214,7 @@ GameObject:
   - component: {fileID: 2570160099638586437}
   - component: {fileID: 4901055748491092080}
   - component: {fileID: 8806145112002463829}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Floor Panel Large
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2657,7 +2657,7 @@ GameObject:
   - component: {fileID: 5055588246635485085}
   - component: {fileID: 1466461021748963572}
   - component: {fileID: 1738143452579834147}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Floor Panel Large (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2761,7 +2761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6511006919457239770}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: ' Floor Panel'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3354,58 +3354,11 @@ PrefabInstance:
     - {fileID: 5479567928550185925, guid: a390fa832b53c984dbd37281f3414460, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6344870515073981813, guid: a390fa832b53c984dbd37281f3414460,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7307944748654049174}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a390fa832b53c984dbd37281f3414460, type: 3}
---- !u!1 &5574798387420723252 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6344870515073981813, guid: a390fa832b53c984dbd37281f3414460,
-    type: 3}
-  m_PrefabInstance: {fileID: 1535775323775591745}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7307944748654049174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5574798387420723252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c38af2a02bf92c4ea1dcc69c6c5716e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 9114111169419205661}
-  player: {fileID: 0}
-  isGround:
-    serializedVersion: 2
-    m_Bits: 512
-  isPlayer:
-    serializedVersion: 2
-    m_Bits: 128
-  walkingPoint: {x: 0, y: 0, z: 0}
-  isWalkingPointSet: 0
-  walkingPointRange: 5
-  timeBetweenAttack: 3
-  isAttacking: 0
-  NPCVisionRange: 3
-  NPCAttackRange: 5
-  isPlayerInVisionRange: 0
-  isPlayerInAttackRange: 0
-  projectile: {fileID: 0}
-  NPChealth: 5
 --- !u!4 &6778286088875170051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5422726261536734274, guid: a390fa832b53c984dbd37281f3414460,
-    type: 3}
-  m_PrefabInstance: {fileID: 1535775323775591745}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &9114111169419205661 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 7722539029154150748, guid: a390fa832b53c984dbd37281f3414460,
     type: 3}
   m_PrefabInstance: {fileID: 1535775323775591745}
   m_PrefabAsset: {fileID: 0}
@@ -3570,58 +3523,11 @@ PrefabInstance:
     - {fileID: 5479567928550185925, guid: a390fa832b53c984dbd37281f3414460, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6344870515073981813, guid: a390fa832b53c984dbd37281f3414460,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7039716849962372530}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a390fa832b53c984dbd37281f3414460, type: 3}
---- !u!1 &4741156236593560642 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6344870515073981813, guid: a390fa832b53c984dbd37281f3414460,
-    type: 3}
-  m_PrefabInstance: {fileID: 1857306482729345335}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7039716849962372530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4741156236593560642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c38af2a02bf92c4ea1dcc69c6c5716e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 8281418445808883819}
-  player: {fileID: 0}
-  isGround:
-    serializedVersion: 2
-    m_Bits: 512
-  isPlayer:
-    serializedVersion: 2
-    m_Bits: 128
-  walkingPoint: {x: 0, y: 0, z: 0}
-  isWalkingPointSet: 0
-  walkingPointRange: 5
-  timeBetweenAttack: 3
-  isAttacking: 0
-  NPCVisionRange: 3
-  NPCAttackRange: 3
-  isPlayerInVisionRange: 0
-  isPlayerInAttackRange: 0
-  projectile: {fileID: 0}
-  NPChealth: 5
 --- !u!4 &5946755548510215541 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5422726261536734274, guid: a390fa832b53c984dbd37281f3414460,
-    type: 3}
-  m_PrefabInstance: {fileID: 1857306482729345335}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &8281418445808883819 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 7722539029154150748, guid: a390fa832b53c984dbd37281f3414460,
     type: 3}
   m_PrefabInstance: {fileID: 1857306482729345335}
   m_PrefabAsset: {fileID: 0}
@@ -4092,58 +3998,11 @@ PrefabInstance:
     - {fileID: 5479567928550185925, guid: a390fa832b53c984dbd37281f3414460, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6344870515073981813, guid: a390fa832b53c984dbd37281f3414460,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9074143217963422462}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a390fa832b53c984dbd37281f3414460, type: 3}
---- !u!1 &736888113757611576 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6344870515073981813, guid: a390fa832b53c984dbd37281f3414460,
-    type: 3}
-  m_PrefabInstance: {fileID: 5923484514770713421}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &9074143217963422462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736888113757611576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c38af2a02bf92c4ea1dcc69c6c5716e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 4116159891637125649}
-  player: {fileID: 0}
-  isGround:
-    serializedVersion: 2
-    m_Bits: 512
-  isPlayer:
-    serializedVersion: 2
-    m_Bits: 128
-  walkingPoint: {x: 0, y: 0, z: 0}
-  isWalkingPointSet: 0
-  walkingPointRange: 5
-  timeBetweenAttack: 3
-  isAttacking: 0
-  NPCVisionRange: 3
-  NPCAttackRange: 5
-  isPlayerInVisionRange: 0
-  isPlayerInAttackRange: 0
-  projectile: {fileID: 0}
-  NPChealth: 5
 --- !u!4 &1834395538376312591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5422726261536734274, guid: a390fa832b53c984dbd37281f3414460,
-    type: 3}
-  m_PrefabInstance: {fileID: 5923484514770713421}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &4116159891637125649 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 7722539029154150748, guid: a390fa832b53c984dbd37281f3414460,
     type: 3}
   m_PrefabInstance: {fileID: 5923484514770713421}
   m_PrefabAsset: {fileID: 0}

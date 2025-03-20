@@ -1167,11 +1167,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4638895545098044041, guid: 350d7eaaf922de74d8341975567458bf,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.43
-      objectReference: {fileID: 0}
     - target: {fileID: 6753035377511140436, guid: 350d7eaaf922de74d8341975567458bf,
         type: 3}
       propertyPath: OnCoinsCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2357,11 +2352,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room 4 Prefab
       objectReference: {fileID: 0}
-    - target: {fileID: 8000429856249216715, guid: 2ec13050bd9442a48be76789f532d662,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8234019381796850193, guid: 2ec13050bd9442a48be76789f532d662,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2682,11 +2672,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room 3 Prefab
       objectReference: {fileID: 0}
-    - target: {fileID: 8119476344238517135, guid: 1d3f362a2d82141438bc23adbecdbd94,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2765,11 +2750,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Room 2 Prefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 9057311801423806970, guid: 029adbe80504f5a4e856725e345746d2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

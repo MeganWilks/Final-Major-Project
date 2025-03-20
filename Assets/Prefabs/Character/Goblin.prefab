@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5422726261536734274}
-  - component: {fileID: 5479567928550185925}
   - component: {fileID: 3519537517121336980}
   - component: {fileID: 7722539029154150748}
+  - component: {fileID: -7003947051888580205}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Goblins
@@ -35,18 +35,6 @@ Transform:
   - {fileID: 1148021232795473088}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5479567928550185925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6344870515073981813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abced70dd620f224ca871983124018c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &3519537517121336980
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -90,6 +78,38 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-7003947051888580205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6344870515073981813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c38af2a02bf92c4ea1dcc69c6c5716e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 0}
+  player: {fileID: 0}
+  isGround:
+    serializedVersion: 2
+    m_Bits: 64
+  isPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  walkingPoint: {x: 0, y: 0, z: 0}
+  isWalkingPointSet: 0
+  walkingPointRange: 5
+  timeBetweenAttack: 3
+  isAttacking: 0
+  NPCVisionRange: 3
+  NPCAttackRange: 0
+  isPlayerInVisionRange: 0
+  isPlayerInAttackRange: 0
+  projectile: {fileID: 4217598960735554062, guid: 8467eb223f00701468675cbd206bcfce,
+    type: 3}
+  NPChealth: 5
 --- !u!1001 &604659136509784875
 PrefabInstance:
   m_ObjectHideFlags: 0
