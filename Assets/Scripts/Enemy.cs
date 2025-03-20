@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
@@ -8,6 +9,7 @@ public class Enemy : MonoBehaviour
 {
     [Header("Nav Mesh Agent")]
     [SerializeField] public NavMeshAgent navMeshAgent;
+    [SerializeField] public NavMeshSurface navMeshSurface;
     [SerializeField] public Transform player;
     [SerializeField] public LayerMask isGround, isPlayer;
 
@@ -35,6 +37,7 @@ public class Enemy : MonoBehaviour
         player = GetComponent<GameObject>().transform;
         //player = GameObject.Find("PlayerObj").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshSurface = GetComponent<NavMeshSurface>();
     }
 
     private void Update()

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6469027886092902206}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -848,27 +848,27 @@ PrefabInstance:
     - target: {fileID: 1882503205917058569, guid: c08fab98e93b8f1429a7d64a473e92ea,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5069748909685746288, guid: c08fab98e93b8f1429a7d64a473e92ea,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7571714449770153986, guid: c08fab98e93b8f1429a7d64a473e92ea,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7861614117785447399, guid: c08fab98e93b8f1429a7d64a473e92ea,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9126413677351424406, guid: c08fab98e93b8f1429a7d64a473e92ea,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9129120970405420470, guid: c08fab98e93b8f1429a7d64a473e92ea,
         type: 3}
@@ -939,6 +939,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4154732841226715944}
     m_Modifications:
+    - target: {fileID: -7003947051888580205, guid: a390fa832b53c984dbd37281f3414460,
+        type: 3}
+      propertyPath: isGround.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 5422726261536734274, guid: a390fa832b53c984dbd37281f3414460,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1586,6 +1591,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4154732841226715944}
     m_Modifications:
+    - target: {fileID: -7003947051888580205, guid: a390fa832b53c984dbd37281f3414460,
+        type: 3}
+      propertyPath: isGround.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 5422726261536734274, guid: a390fa832b53c984dbd37281f3414460,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2737,6 +2747,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4154732841226715944}
     m_Modifications:
+    - target: {fileID: -7003947051888580205, guid: a390fa832b53c984dbd37281f3414460,
+        type: 3}
+      propertyPath: isGround.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 5422726261536734274, guid: a390fa832b53c984dbd37281f3414460,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2908,27 +2923,27 @@ PrefabInstance:
     - target: {fileID: 1882503205917058569, guid: c08fab98e93b8f1429a7d64a473e92ea,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5069748909685746288, guid: c08fab98e93b8f1429a7d64a473e92ea,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7571714449770153986, guid: c08fab98e93b8f1429a7d64a473e92ea,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7861614117785447399, guid: c08fab98e93b8f1429a7d64a473e92ea,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9126413677351424406, guid: c08fab98e93b8f1429a7d64a473e92ea,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9129120970405420470, guid: c08fab98e93b8f1429a7d64a473e92ea,
         type: 3}
@@ -3439,6 +3454,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4154732841226715944}
     m_Modifications:
+    - target: {fileID: -7003947051888580205, guid: a390fa832b53c984dbd37281f3414460,
+        type: 3}
+      propertyPath: isGround.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 5422726261536734274, guid: a390fa832b53c984dbd37281f3414460,
         type: 3}
       propertyPath: m_LocalScale.x

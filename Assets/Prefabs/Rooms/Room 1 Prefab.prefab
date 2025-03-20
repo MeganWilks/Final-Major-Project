@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 2059442297123680176}
   - component: {fileID: 1513207818376867010}
   - component: {fileID: 7872415211051505883}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Floor Panel Large (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 6795703247241332463}
   - component: {fileID: 3137854005018452057}
   - component: {fileID: 702916125332280084}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Floor Panel Large (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1670,7 +1670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 901022755057033507}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2214,7 +2214,7 @@ GameObject:
   - component: {fileID: 2570160099638586437}
   - component: {fileID: 4901055748491092080}
   - component: {fileID: 8806145112002463829}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Floor Panel Large
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2657,7 +2657,7 @@ GameObject:
   - component: {fileID: 5055588246635485085}
   - component: {fileID: 1466461021748963572}
   - component: {fileID: 1738143452579834147}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Floor Panel Large (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2761,7 +2761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6511006919457239770}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: ' Floor Panel'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3265,6 +3265,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4256990081860201374}
     m_Modifications:
+    - target: {fileID: -7003947051888580205, guid: a390fa832b53c984dbd37281f3414460,
+        type: 3}
+      propertyPath: isGround.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 5422726261536734274, guid: a390fa832b53c984dbd37281f3414460,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3444,6 +3449,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4256990081860201374}
     m_Modifications:
+    - target: {fileID: -7003947051888580205, guid: a390fa832b53c984dbd37281f3414460,
+        type: 3}
+      propertyPath: isGround.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 5422726261536734274, guid: a390fa832b53c984dbd37281f3414460,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3919,6 +3929,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4256990081860201374}
     m_Modifications:
+    - target: {fileID: -7003947051888580205, guid: a390fa832b53c984dbd37281f3414460,
+        type: 3}
+      propertyPath: isGround.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 5422726261536734274, guid: a390fa832b53c984dbd37281f3414460,
         type: 3}
       propertyPath: m_LocalScale.x

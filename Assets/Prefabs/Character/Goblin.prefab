@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c38af2a02bf92c4ea1dcc69c6c5716e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navMeshAgent: {fileID: 0}
+  navMeshAgent: {fileID: 7722539029154150748}
   player: {fileID: 0}
   isGround:
     serializedVersion: 2
