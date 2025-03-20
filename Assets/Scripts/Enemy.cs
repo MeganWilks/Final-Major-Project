@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] public GameObject projectile;
 
     [Header("NPC Health")]
-    [SerializeField] public int NPChealth;
+    [SerializeField] public int NPC_health;
 
 
     private void Awake()
