@@ -2047,6 +2047,94 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: e1158ed3b2d0f7c4ab7c5e1b9b91be6a, type: 2}
   m_BuildHeightMesh: 0
+--- !u!1001 &1535035883
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114270082976686016, guid: 8467eb223f00701468675cbd206bcfce,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.46262997
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270082976686016, guid: 8467eb223f00701468675cbd206bcfce,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.46262997
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270082976686016, guid: 8467eb223f00701468675cbd206bcfce,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.46262997
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270082976686016, guid: 8467eb223f00701468675cbd206bcfce,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270082976686016, guid: 8467eb223f00701468675cbd206bcfce,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270082976686016, guid: 8467eb223f00701468675cbd206bcfce,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270082976686016, guid: 8467eb223f00701468675cbd206bcfce,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270082976686016, guid: 8467eb223f00701468675cbd206bcfce,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270082976686016, guid: 8467eb223f00701468675cbd206bcfce,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270082976686016, guid: 8467eb223f00701468675cbd206bcfce,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270082976686016, guid: 8467eb223f00701468675cbd206bcfce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270082976686016, guid: 8467eb223f00701468675cbd206bcfce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270082976686016, guid: 8467eb223f00701468675cbd206bcfce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1655092408704429632, guid: 8467eb223f00701468675cbd206bcfce,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4217598960735554062, guid: 8467eb223f00701468675cbd206bcfce,
+        type: 3}
+      propertyPath: m_Name
+      value: Attack NPC Ball
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8467eb223f00701468675cbd206bcfce, type: 3}
 --- !u!1 &1537738016
 GameObject:
   m_ObjectHideFlags: 0
@@ -2878,6 +2966,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ' Room 1 Prefab'
       objectReference: {fileID: 0}
+    - target: {fileID: 8281418445808883819, guid: 0029d824d81372c42a7c9ec6c60e969d,
+        type: 3}
+      propertyPath: m_Speed
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3144,11 +3237,6 @@ PrefabInstance:
       propertyPath: navMeshSurface
       value: 
       objectReference: {fileID: 2143251257}
-    - target: {fileID: 3406085135044531424, guid: 029adbe80504f5a4e856725e345746d2,
-        type: 3}
-      propertyPath: isGround.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 4545900459140316337, guid: 029adbe80504f5a4e856725e345746d2,
         type: 3}
       propertyPath: gameManager
@@ -3164,11 +3252,6 @@ PrefabInstance:
       propertyPath: navMeshSurface
       value: 
       objectReference: {fileID: 2143251257}
-    - target: {fileID: 5641030572002106603, guid: 029adbe80504f5a4e856725e345746d2,
-        type: 3}
-      propertyPath: isGround.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 6334861574569836075, guid: 029adbe80504f5a4e856725e345746d2,
         type: 3}
       propertyPath: player
@@ -3179,11 +3262,6 @@ PrefabInstance:
       propertyPath: navMeshSurface
       value: 
       objectReference: {fileID: 2143251257}
-    - target: {fileID: 6334861574569836075, guid: 029adbe80504f5a4e856725e345746d2,
-        type: 3}
-      propertyPath: isGround.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 7416978901228136767, guid: 029adbe80504f5a4e856725e345746d2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3244,20 +3322,10 @@ PrefabInstance:
       propertyPath: navMeshSurface
       value: 
       objectReference: {fileID: 2143251257}
-    - target: {fileID: 8777954890822916937, guid: 029adbe80504f5a4e856725e345746d2,
-        type: 3}
-      propertyPath: isGround.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 9057311801423806970, guid: 029adbe80504f5a4e856725e345746d2,
         type: 3}
       propertyPath: m_Name
       value: Room 2 Prefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 9057311801423806970, guid: 029adbe80504f5a4e856725e345746d2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3282,3 +3350,4 @@ SceneRoots:
   - {fileID: 975166142}
   - {fileID: 165378297}
   - {fileID: 269669045}
+  - {fileID: 1535035883}

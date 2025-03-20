@@ -8,6 +8,7 @@ TagManager:
   - Door
   - Health Potion
   - Goblins
+  - Wall
   layers:
   - Default
   - TransparentFX

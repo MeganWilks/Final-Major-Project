@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     [Header("NPC Attacking")]
     [SerializeField] public float timeBetweenAttack;
     [SerializeField] public bool isAttacking;
+    [SerializeField] public int attackPower;
 
     [Header("NPC States")]
     [SerializeField] public float NPCVisionRange, NPCAttackRange = 0;
@@ -29,12 +30,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] public GameObject projectile;
 
     [Header("NPC Health")]
-    [SerializeField] public int NPC_health;
+    [SerializeField] public int NPChealth;
 
 
     private void Awake()
     {
-        player = GetComponent<GameObject>().transform;
+        
+        player = GetComponent<Transform>().transform;
         //player = GameObject.Find("PlayerObj").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshSurface = GetComponent<NavMeshSurface>();
@@ -120,9 +122,8 @@ public class Enemy : MonoBehaviour
             //ADD ATTACK CODE
             Rigidbody rigidbody = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
 
-            rigidbody.AddForce(transform.forward * 5f, ForceMode.Impulse);
-           
-
+            rigidbody.AddForce(transform.forward * attackPower, ForceMode.Impulse);
+           // rigidbody.AddForce(transform.up * 2f, ForceMode.Impulse);
 
             isAttacking = true;
             Invoke(nameof(ResetAttacking), timeBetweenAttack);

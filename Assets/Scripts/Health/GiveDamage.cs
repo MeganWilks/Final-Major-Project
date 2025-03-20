@@ -12,7 +12,11 @@ public class GiveDamage : MonoBehaviour
         {
             Health.Damage(1);
             Destroy(gameObject);
+            
         }
+
+        if(other.gameObject.CompareTag("Wall"))
+            Destroy(gameObject);
 
       
         
