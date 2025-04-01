@@ -97,12 +97,11 @@ public class Enemy : MonoBehaviour
         if (Physics.Raycast(walkingPoint, -transform.up, 2f, isGround))
         {
             isWalkingPointSet = true;
+            return;
         }
 
-        else
-        {
-            FindingWalkPoint();
-        }
+        FindingWalkPoint();
+        
 
     }
 
