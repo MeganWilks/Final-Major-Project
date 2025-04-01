@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GiveDamage : MonoBehaviour
 {
+
+
+    [SerializeField] public LayerMask Walls;
     // Start is called before the first frame update
 
     private void OnTriggerEnter(Collider other)
@@ -14,9 +17,15 @@ public class GiveDamage : MonoBehaviour
             Destroy(gameObject);
             
         }
+        
+      // if(other.gameObject.layer == Walls)
+       // {
+       //     Destroy(gameObject);
+       // }
+            
 
-        if(other.gameObject.CompareTag("Wall"))
-            Destroy(gameObject);
+        
+       
 
       
         

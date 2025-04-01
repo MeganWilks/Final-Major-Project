@@ -9,6 +9,7 @@ TagManager:
   - Health Potion
   - Goblins
   - Wall
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Room 1 Floor
   - Room 3 Floor
   - Room 4 Floor
-  - 
+  - Wall
   - 
   - 
   - 

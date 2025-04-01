@@ -120,6 +120,8 @@ public class Enemy : MonoBehaviour
         {
             //ADD ATTACK CODE
             Rigidbody rigidbody = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            var direction = new Vector3(player.transform.position.x - rigidbody.position.x, 1, player.transform.position.z - rigidbody.position.z);
+            rigidbody.gameObject.transform.forward = direction;
 
             rigidbody.AddForce(transform.forward * attackPower, ForceMode.Impulse);
            // rigidbody.AddForce(transform.up * 2f, ForceMode.Impulse);
