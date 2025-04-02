@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1403401137292385416}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Window Wall
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +114,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wall_windowGate
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f05fa5c8885ea7747a540a1903450eb7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f05fa5c8885ea7747a540a1903450eb7,
         type: 3}

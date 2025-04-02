@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 5422726261536734274}
   - component: {fileID: 3519537517121336980}
   - component: {fileID: 7722539029154150748}
-  - component: {fileID: -7003947051888580205}
+  - component: {fileID: -8706283760181668209}
+  - component: {fileID: 4932213514114301307}
+  - component: {fileID: -5324407110773727180}
   m_Layer: 0
   m_Name: Goblin
   m_TagString: Goblins
@@ -78,7 +80,28 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &-7003947051888580205
+--- !u!95 &-8706283760181668209
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6344870515073981813}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3bfb2c3b251dca547acb4bc46fdbfc3d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4932213514114301307
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,31 +110,63 @@ MonoBehaviour:
   m_GameObject: {fileID: 6344870515073981813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c38af2a02bf92c4ea1dcc69c6c5716e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b4a3628686d81a438f7bfdac3bc485e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshAgent: {fileID: 7722539029154150748}
-  navMeshSurface: {fileID: 0}
-  player: {fileID: 0}
-  isGround:
-    serializedVersion: 2
-    m_Bits: 64
-  isPlayer:
+  startWaitTime: 4
+  rotateTime: 2
+  walkSpeed: 6
+  runSpeed: 9
+  radiusView: 15
+  angleView: 0
+  playerMask:
     serializedVersion: 2
     m_Bits: 128
-  walkingPoint: {x: 0, y: 0, z: 0}
-  isWalkingPointSet: 0
-  walkingPointRange: 5
-  timeBetweenAttack: 3
-  isAttacking: 0
-  attackPower: 8
-  NPCVisionRange: 3
-  NPCAttackRange: 2
-  isPlayerInVisionRange: 0
-  isPlayerInAttackRange: 0
-  projectile: {fileID: 4217598960735554062, guid: 8467eb223f00701468675cbd206bcfce,
-    type: 3}
-  NPChealth: 5
+  obstaclMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  meshResolution: 1
+  edgeIterations: 4
+  edgeDistance: 0.5
+  waypoints:
+  - {fileID: 0}
+  currentWaypointIndex: 0
+  playerLastPos: {x: 0, y: 0, z: 0}
+  playerPos: {x: 0, y: 0, z: 0}
+  m_playerInRange: 0
+  m_playerIsNear: 0
+  m_isPatrol: 0
+  m_playerIsCaught: 0
+  m_WaitTime: 0
+  m_TimeToRotate: 0
+--- !u!54 &-5324407110773727180
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6344870515073981813}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &604659136509784875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123,7 +178,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 587970604fb22dc49b3d29e376924344,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 587970604fb22dc49b3d29e376924344,
         type: 3}
@@ -143,7 +198,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 587970604fb22dc49b3d29e376924344,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 587970604fb22dc49b3d29e376924344,
         type: 3}
@@ -222,37 +277,37 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 74ab687486d54574fa87e7b3d7e62e41,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.159
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74ab687486d54574fa87e7b3d7e62e41,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01
+      value: 0.041
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74ab687486d54574fa87e7b3d7e62e41,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.014
+      value: 0.065
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74ab687486d54574fa87e7b3d7e62e41,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5881693
+      value: 0.643981
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74ab687486d54574fa87e7b3d7e62e41,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.17616935
+      value: -0.053364582
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74ab687486d54574fa87e7b3d7e62e41,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.73930764
+      value: -0.7581318
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74ab687486d54574fa87e7b3d7e62e41,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.27648765
+      value: -0.08761834
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 74ab687486d54574fa87e7b3d7e62e41,
         type: 3}
@@ -267,7 +322,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 74ab687486d54574fa87e7b3d7e62e41,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -36.727
+      value: -1.868
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 74ab687486d54574fa87e7b3d7e62e41,
         type: 3}

@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4017739963203394708}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wall Single
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: wallSingle
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e169d76cb0301ec4faf90413e3696317,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e169d76cb0301ec4faf90413e3696317,
         type: 3}

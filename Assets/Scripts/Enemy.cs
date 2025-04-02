@@ -27,10 +27,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float NPCVisionRange, NPCAttackRange = 0;
     [SerializeField] public bool isPlayerInVisionRange, isPlayerInAttackRange;
 
-    [SerializeField] public GameObject projectile;
+    
+    //[SerializeField] public GameObject projectile;
 
     [Header("NPC Health")]
     [SerializeField] public int NPChealth;
+
+    [Header("NPC Animator")]
+    [SerializeField] Animator npcAnimator;
 
 
     private void Awake()
@@ -40,6 +44,7 @@ public class Enemy : MonoBehaviour
         //player = GameObject.Find("PlayerObj").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshSurface = GetComponent<NavMeshSurface>();
+        npcAnimator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -113,18 +118,29 @@ public class Enemy : MonoBehaviour
     }
     private void NPCAttackingPlayer()
     {
+        if(!npcAnimator.GetCurrentAnimatorStateInfo(0).IsName("Dagger_Attack"))
+        {
+            npcAnimator.SetTrigger("Attack");
+            navMeshAgent.SetDestination(transform.position);
+        }
+        
+
+
         // Make Sure Enemy doesnt move when attacking
         navMeshAgent.SetDestination(transform.position);
         transform.LookAt(player);
         if (!isAttacking)
         {
             //ADD ATTACK CODE
-            Rigidbody rigidbody = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            var direction = new Vector3(player.transform.position.x - rigidbody.position.x, 1, player.transform.position.z - rigidbody.position.z);
-            rigidbody.gameObject.transform.forward = direction;
+            //Rigidbody rigidbody = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+           // var direction = new Vector3(player.transform.position.x - rigidbody.position.x, 1, player.transform.position.z - rigidbody.position.z);
+            //rigidbody.gameObject.transform.forward = direction;
 
-            rigidbody.AddForce(transform.forward * attackPower, ForceMode.Impulse);
+           // rigidbody.AddForce(transform.forward * attackPower, ForceMode.Impulse);
            // rigidbody.AddForce(transform.up * 2f, ForceMode.Impulse);
+
+
+
 
             isAttacking = true;
             Invoke(nameof(ResetAttacking), timeBetweenAttack);
