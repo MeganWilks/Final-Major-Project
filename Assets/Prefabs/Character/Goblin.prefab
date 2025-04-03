@@ -66,8 +66,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 2
+  m_Acceleration: 4
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -106,10 +106,12 @@ MonoBehaviour:
   isAttacking: 0
   attackPower: 8
   NPCVisionRange: 3
-  NPCAttackRange: 2
+  NPCAttackRange: 0.5
   isPlayerInVisionRange: 0
   isPlayerInAttackRange: 0
   projectile: {fileID: 4217598960735554062, guid: 8467eb223f00701468675cbd206bcfce,
+    type: 3}
+  NPCWeapon: {fileID: 4147520041546786540, guid: d5a870022072b454c882acb62e675ddb,
     type: 3}
   NPChealth: 5
 --- !u!1001 &604659136509784875

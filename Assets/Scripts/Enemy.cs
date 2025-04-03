@@ -28,16 +28,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] public bool isPlayerInVisionRange, isPlayerInAttackRange;
 
     [SerializeField] public GameObject projectile;
+    [SerializeField] public GameObject NPCWeapon;
 
     [Header("NPC Health")]
     [SerializeField] public int NPChealth;
 
 
+
     private void Awake()
     {
-        
-        player = GetComponent<Transform>().transform;
-        //player = GameObject.Find("PlayerObj").transform;
+        player = GameObject.Find("Player").transform;
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshSurface = GetComponent<NavMeshSurface>();
     }
@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
             NPCPatrolling();
         }
 
-        if (isPlayerInVisionRange && !isPlayerInAttackRange)
+        if (isPlayerInVisionRange)
         {
             NPCChasePlayer();
         }
@@ -114,21 +114,46 @@ public class Enemy : MonoBehaviour
     private void NPCAttackingPlayer()
     {
         // Make Sure Enemy doesnt move when attacking
-        navMeshAgent.SetDestination(transform.position);
-        transform.LookAt(player);
+        //transform.LookAt(player);
         if (!isAttacking)
         {
-            //ADD ATTACK CODE
-            Rigidbody rigidbody = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            var direction = new Vector3(player.transform.position.x - rigidbody.position.x, 1, player.transform.position.z - rigidbody.position.z);
-            rigidbody.gameObject.transform.forward = direction;
+            GameObject currentAttack = Instantiate(NPCWeapon,transform.position,transform.rotation);
 
-            rigidbody.AddForce(transform.forward * attackPower, ForceMode.Impulse);
+            //currentAttack.transform.parent = transform;
+ 
+
+
+
+            //ADD ATTACK CODE
+            //Rigidbody rigidbody = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            //var direction = new Vector3(player.transform.position.x - rigidbody.position.x, 1, player.transform.position.z - rigidbody.position.z);
+            //rigidbody.gameObject.transform.forward = direction;
+
+           // rigidbody.AddForce(transform.forward * attackPower, ForceMode.Impulse);
            // rigidbody.AddForce(transform.up * 2f, ForceMode.Impulse);
 
             isAttacking = true;
-            Invoke(nameof(ResetAttacking), timeBetweenAttack);
+            // Invoke(nameof(ResetAttacking), timeBetweenAttack);
+            StartCoroutine(AttackAnimation(currentAttack));
         }
+    }
+
+
+    IEnumerator AttackAnimation (GameObject currentAttack)
+    {
+        float timer = 0f;
+        while(timer < timeBetweenAttack)
+        {
+            currentAttack.transform.position = transform.forward + transform.position;
+            currentAttack.transform.rotation = Quaternion.Euler(150, 0, 0) * transform.rotation;
+            currentAttack.transform.position += transform.up;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+       
+        Destroy(currentAttack);
+        isAttacking = false;
+
     }
 
     private void ResetAttacking()
@@ -139,7 +164,12 @@ public class Enemy : MonoBehaviour
 
     public void Damage(int damage)
     {
-        NPChealth -= damage;
+        //NPChealth(Health.Damage(damage));
+
+        if(NPChealth <= 0)
+        {
+
+        }
 
         if (NPChealth <= 0) Invoke(nameof(DestroyEnemy),0.5f);
 

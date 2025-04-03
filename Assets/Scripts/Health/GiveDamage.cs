@@ -5,40 +5,21 @@ using UnityEngine;
 public class GiveDamage : MonoBehaviour
 {
 
-
-    [SerializeField] public LayerMask Walls;
-    // Start is called before the first frame update
+    [SerializeField] bool HasDamaged = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !HasDamaged)
         {
+            Debug.Log("HasDamaged");
             Health.Damage(1);
-            Destroy(gameObject);
-            
+            HasDamaged = true;
+
         }
-        
-      // if(other.gameObject.layer == Walls)
-       // {
-       //     Destroy(gameObject);
-       // }
-            
+        Debug.Log("HasTrigiered");
 
-        
-       
-
-      
-        
-            
-        
-            
-
-        
-                
-
-       
-        
     }
+
 
 
 
