@@ -17,20 +17,7 @@ public class ToolClass : ItemClass
     public override void Use(PlayerController caller)
     {
         base.Use(caller);
-        
-        if(toolType == ToolType.bow)
-        {
-            Debug.Log("Arrow Used");
-            caller.inventoryManager.Remove(this);
-        }
-        else if(toolType == ToolType.sword)
-        {
-            Debug.Log("Sword Used");
-        }
-        else
-        {
-            Debug.Log("Use Other");
-        }
+        Debug.Log("Swing Tool");
     }
 
     public override ToolClass GetTool() { return this; }

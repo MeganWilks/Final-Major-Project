@@ -131,11 +131,11 @@ public class PlayerController : MonoBehaviour
             isSprinting = false;
             speed = speedCrouching;
             player.transform.localScale = crouchingSize;
-            
         }
-        #endregion
+        #endregion // Crouch
 
-        #region Use Item
+
+
         else if (Input.GetKeyDown(KeyCode.E))
         {
             //Use Item
@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        #endregion // Crouch
+       
 
         #region no state
         else
@@ -160,7 +160,12 @@ public class PlayerController : MonoBehaviour
         #endregion // No State
 
         
+
+        // Create Enable/Disable Sword
+        // Assign Weapon to Player (See NPC Sword)
+         
     }
+
 
 
 
