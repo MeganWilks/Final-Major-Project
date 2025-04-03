@@ -201,6 +201,7 @@ public class InventoryManager : MonoBehaviour
 
 
 
+
         //Setting New Index
         selectedSlotIndex = newIndex;
 
@@ -215,6 +216,18 @@ public class InventoryManager : MonoBehaviour
         
         hotbarSelector.transform.SetParent(slots[newIndex].transform, false);
         
+
+        if (selectedItem.GetTool() == null)
+        {
+            if(selectedItem.itemName == "Sword")
+            {
+                //Show Sword
+
+                // else hide
+
+            }
+            
+        }
         #endregion
     }
 
