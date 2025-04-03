@@ -145,7 +145,7 @@ public class Enemy : MonoBehaviour
         while(timer < timeBetweenAttack)
         {
             currentAttack.transform.position = transform.forward + transform.position;
-            currentAttack.transform.rotation = Quaternion.Euler(150, 0, 0) * transform.rotation;
+            currentAttack.transform.rotation = Quaternion.Euler(0, 0, -90) * transform.rotation;
             currentAttack.transform.position += transform.up;
             timer += Time.deltaTime;
             yield return null;
