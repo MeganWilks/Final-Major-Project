@@ -11,7 +11,8 @@ public class ToolClass : ItemClass
 
     {
         sword,
-        bow
+        bow,
+        Key
     }
 
     public override void Use(PlayerController caller)

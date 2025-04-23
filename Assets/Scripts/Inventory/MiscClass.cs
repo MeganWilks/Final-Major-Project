@@ -13,7 +13,7 @@ public class MiscClass : ItemClass
         if (itemName == "Health Potion")
         {
             Health.Heal(10);
-            
+
         }
         else
         {

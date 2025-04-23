@@ -14,6 +14,7 @@ public class NextLevel : MonoBehaviour
     {
         if(other == gameObject.CompareTag("Door"))
         {
+            
             gameManager.UnLoadCurrentRoom();
             gameManager.LoadNextRoom();
 
