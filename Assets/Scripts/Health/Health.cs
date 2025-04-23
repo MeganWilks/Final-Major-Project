@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
-public class Health: MonoBehaviour
+public class Health : MonoBehaviour
 {
     [Header("Heart Images")]
     [SerializeField] private Texture fullHeart;
@@ -17,65 +19,79 @@ public class Health: MonoBehaviour
 
 
     public static Health instance;
-  
+
     private void HeartUIUpdate()
     {
         int fullHearts = Mathf.FloorToInt(playerHealth / 2);
         bool halfHearts = playerHealth % 2 == 1;
-        for(int i = 0; i < fullHearts; i++)
+        for (int i = 0; i < fullHearts; i++)
         {
             heartList[i].texture = fullHeart;
-            
+
 
         }
-        if(halfHearts)
+        if (halfHearts)
         {
             heartList[fullHearts].texture = halfHeart;
-            fullHearts ++;
+            fullHearts++;
 
         }
-        for(int i = fullHearts ; i < heartList.Count; i++)
+        for (int i = fullHearts; i < heartList.Count; i++)
         {
             heartList[i].texture = emptyHeart;
 
 
         }
     }
-   
 
-    
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
-        
+
     }
 
     public static void Damage(int damageAmount)
     {
-        
+
         instance.playerHealth -= damageAmount;
-        instance.playerHealth =  Mathf.Clamp(instance.playerHealth, 0, 10);
+        instance.playerHealth = Mathf.Clamp(instance.playerHealth, 0, 10);
         Debug.Log("health; " + instance.playerHealth);
         instance.HeartUIUpdate();
+        if(instance.playerHealth <= 0)
+        {
+            Death();
+        }
 
     }
 
     public static void Heal(int healAmount)
     {
-        
+
         instance.playerHealth += healAmount;
         instance.playerHealth = Mathf.Clamp(instance.playerHealth, 0, 10);
         Debug.Log("health " + instance.playerHealth);
         instance.HeartUIUpdate();
     }
+    public static void Death()
+    { 
+        
+        SceneManager.LoadSceneAsync(2);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
+    }
+
+
+}
 
 
   
-    }
+    
 
