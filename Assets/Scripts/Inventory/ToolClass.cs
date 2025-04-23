@@ -26,7 +26,7 @@ public class ToolClass : ItemClass
         }
         else if(toolType == ToolType.sword)
         {
-            Debug.Log("Sword Used");
+            Debug.Log("Sword");
         }
         else
         {

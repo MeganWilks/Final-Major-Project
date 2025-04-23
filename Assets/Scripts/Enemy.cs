@@ -164,12 +164,9 @@ public class Enemy : MonoBehaviour
 
     public void Damage(int damage)
     {
+
+        NPChealth -= damage;
         //NPChealth(Health.Damage(damage));
-
-        if(NPChealth <= 0)
-        {
-
-        }
 
         if (NPChealth <= 0) Invoke(nameof(DestroyEnemy),0.5f);
 

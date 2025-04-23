@@ -1,3 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
+using System.Linq;
+using System.Resources;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,6 +13,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player")]
 
+    public static PlayerController instance;
     [SerializeField] private GameObject player;
     [SerializeField] private CapsuleCollider capsuleColliders;
     public CharacterController CharController; // Character Controller 
@@ -41,6 +47,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isSprinting;
     [SerializeField] private bool isMoving;
 
+    [SerializeField] private bool MovementEnabled = true;
+
     [Header("Position")]
     [SerializeField] private float xPos;
     [SerializeField] private float yPos;
@@ -58,16 +66,26 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] public InventoryManager inventoryManager;
 
+    [Header("Enemy")]
+    [SerializeField] public BoxCollider attackCollider;
+
 
     void Start()
     {
-        
+        instance = this;
+
         SetCursor();
         
 
         speed = speedWalking;
 
         healthValue = 5;
+    }
+
+    public void SetAnimator(string state, bool condition)
+    {
+        playerAnimator.SetBool(state, condition);
+
     }
 
     private void SetCursor()
@@ -93,6 +111,8 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerMovement()
     {
+        if (!MovementEnabled) return;
+        
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         // Normalized means that the Direction is the same but it stays like this a little longer
@@ -112,6 +132,46 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
     }
+
+    public void AttackEnemy()
+    {
+        if(isAttacking) return;
+
+        StartCoroutine(AttackingCoroutine());
+        
+    
+    }
+
+    IEnumerator AttackingCoroutine()
+    {
+        MovementEnabled = false;
+
+        isAttacking = true;
+        PlayerController.instance.SetAnimator("IsAttacking", true);
+        yield return new WaitForSeconds(0.2f);
+
+        DealDamage(attackPower);
+        yield return new WaitForSeconds(1f);
+
+        isAttacking = false;
+        SetAnimator("IsAttacking", false);
+
+        MovementEnabled = true;
+    }
+
+    public void DealDamage(int damage)
+    {
+        List<RaycastHit> hits = new List<RaycastHit>();
+        hits = Physics.BoxCastAll(transform.position + attackCollider.center, attackCollider.size / 2, Vector3.zero).ToList();
+        foreach(RaycastHit hit in hits)
+        {
+            if(hit.collider == null) continue;
+            if(hit.collider.GetComponent<Enemy>() == null) continue;
+            hit.collider.GetComponent<Enemy>().Damage(damage);
+        }
+
+    }
+
 
     private void KeyPressedMovement()
     {

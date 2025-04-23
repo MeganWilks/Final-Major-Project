@@ -204,7 +204,7 @@ public class InventoryManager : MonoBehaviour
         //Setting New Index
         selectedSlotIndex = newIndex;
 
-        if (selectedSlotIndex > 0 & selectedSlotIndex <items.Count)
+        if (selectedSlotIndex >= 0 & selectedSlotIndex <items.Count)
         {
             selectedItem = items[newIndex].GetItem();
         }

@@ -1202,6 +1202,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6645802148543990748, guid: 350d7eaaf922de74d8341975567458bf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.773
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645802148543990748, guid: 350d7eaaf922de74d8341975567458bf,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.075
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645802148543990748, guid: 350d7eaaf922de74d8341975567458bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6753035377511140436, guid: 350d7eaaf922de74d8341975567458bf,
         type: 3}
       propertyPath: OnCoinsCollected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
