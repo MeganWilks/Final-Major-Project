@@ -9,7 +9,7 @@ public class ScreenManager : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
-        Debug.Log("Load New Scene");
+        Debug.Log("Play Game");
         
     }
 
@@ -19,5 +19,10 @@ public class ScreenManager : MonoBehaviour
         Debug.Log("Game Has Closed");
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+        Debug.Log("Load Main Menu");
+    }
     
 }
