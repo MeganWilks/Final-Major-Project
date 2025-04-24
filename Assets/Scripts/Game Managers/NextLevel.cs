@@ -13,13 +13,13 @@ public class NextLevel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(transform.CompareTag("Door"))
+        if(gameObject.tag == "Door")
         {
             
             gameManager.LoadNewRoom();
 
         }
-        if(transform.CompareTag("FinalDoor"))
+        if(gameObject.tag == "FinalDoor")
         {
             if (gameManager.Rooms[gameManager.RoomIndex].keyToRemove == null) return;
             if (gameManager.Rooms[gameManager.RoomIndex].enemiesInRoom != 0) return;

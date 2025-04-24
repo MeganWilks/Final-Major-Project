@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
     public void DealDamage(int damage)
     {
         List<RaycastHit> hits = new List<RaycastHit>();
-        hits = Physics.BoxCastAll(transform.position + attackCollider.center, attackCollider.size / 2,transform.forward).ToList();
+        hits = Physics.BoxCastAll(transform.position + attackCollider.center, attackCollider.size / 2,transform.forward, Quaternion.identity, 1).ToList();
         foreach(RaycastHit hit in hits)
         {
             if(hit.collider == null) continue;
