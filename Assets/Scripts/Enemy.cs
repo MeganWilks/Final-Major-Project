@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] public float timeBetweenAttack;
     [SerializeField] public bool isAttacking;
     [SerializeField] public int attackPower;
+    [SerializeField] private GameObject currentAttack;
 
     [Header("NPC States")]
     [SerializeField] public float NPCVisionRange, NPCAttackRange = 0;
@@ -117,7 +118,7 @@ public class Enemy : MonoBehaviour
         //transform.LookAt(player);
         if (!isAttacking)
         {
-            GameObject currentAttack = Instantiate(NPCWeapon,transform.position,transform.rotation);
+            currentAttack = Instantiate(NPCWeapon,transform.position,transform.rotation);
 
             //currentAttack.transform.parent = transform;
  
@@ -178,6 +179,11 @@ public class Enemy : MonoBehaviour
     private void DestroyEnemy()
     {
         Destroy(gameObject);
+        if(currentAttack != null)
+        {
+            Destroy(currentAttack);
+        }
+        
     }
 }
 

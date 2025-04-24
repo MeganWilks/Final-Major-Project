@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
 
         KeyPressedMovement();
 
-        isMoving = CharController.velocity.sqrMagnitude > 0 ? true : false; // If value is greater than 0 then is True, if less then false ternary conditional operator
+        isMoving = movementDirection.sqrMagnitude > 0 ? true : false; // If value is greater than 0 then is True, if less then false ternary conditional operator
         playerAnimator.SetBool("IsWalking", isMoving); // if IsMoving is true then set animator IsWalking to true
         #endregion
     }
@@ -147,14 +147,15 @@ public class PlayerController : MonoBehaviour
         MovementEnabled = false;
 
         isAttacking = true;
-        PlayerController.instance.SetAnimator("IsAttacking", true);
+        playerAnimator.SetTrigger("IsAttacking");
+        
         yield return new WaitForSeconds(0.2f);
 
         DealDamage(attackPower);
         yield return new WaitForSeconds(1f);
 
         isAttacking = false;
-        SetAnimator("IsAttacking", false);
+        
 
         MovementEnabled = true;
     }
