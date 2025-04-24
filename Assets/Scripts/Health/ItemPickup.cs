@@ -5,20 +5,27 @@ using UnityEngine;
 public class ItemPickup : MonoBehaviour
 {
     [SerializeField] public ItemClass item;
-  
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             InventoryManager.instance.Add(item);
             gameObject.SetActive(false);
+            if (item.itemName == "Key")
+            {
+                GameManager.instance.Rooms[GameManager.instance.RoomIndex].keyToRemove = item;
+
+            }
+
+
+
 
         }
+
+
     }
-
-
 }
-
 
 
     

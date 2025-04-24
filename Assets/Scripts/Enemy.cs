@@ -179,10 +179,12 @@ public class Enemy : MonoBehaviour
     private void DestroyEnemy()
     {
         Destroy(gameObject);
-        if(currentAttack != null)
+        if (currentAttack != null)
         {
             Destroy(currentAttack);
         }
+
+        GameManager.instance.Rooms[GameManager.instance.RoomIndex].enemiesInRoom --;
         
     }
 }

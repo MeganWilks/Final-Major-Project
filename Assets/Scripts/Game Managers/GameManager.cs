@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
+    public static GameManager instance;
+
     [Header("Room Variables")]
 
     [SerializeField] public Room[] Rooms;
@@ -16,8 +18,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject CurrentRoom;
     [SerializeField] public Camera cam;
     [SerializeField] public GameObject playerPos;
-    
 
+
+
+
+    public void Awake()
+    {
+        instance = this;
+    }
 
     public void LoadNextRoom()
     {
@@ -37,8 +45,19 @@ public class GameManager : MonoBehaviour
 
     public void UnLoadCurrentRoom()
     {
+        
         //Destroy(CurrentRoom);
         CurrentRoom.SetActive(false);
+
+    }
+
+    public void LoadNewRoom()
+    {
+        if (Rooms[RoomIndex].keyToRemove == null) return;
+        if (Rooms[RoomIndex].enemiesInRoom != 0) return;
+        InventoryManager.instance.Remove(Rooms[RoomIndex].keyToRemove);
+        UnLoadCurrentRoom();
+        LoadNextRoom();
 
     }
 
@@ -59,4 +78,7 @@ public class Room
     public Vector3 cameraPos;
     public float cameraSize;
     public Vector3 playerPos;
+    public int enemiesInRoom;
+    public ItemClass keyToRemove;
+
 }
