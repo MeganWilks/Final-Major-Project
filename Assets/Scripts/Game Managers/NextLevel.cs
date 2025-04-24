@@ -24,7 +24,10 @@ public class NextLevel : MonoBehaviour
             if (gameManager.Rooms[gameManager.RoomIndex].keyToRemove == null) return;
             if (gameManager.Rooms[gameManager.RoomIndex].enemiesInRoom != 0) return;
             SceneManager.LoadScene(3);
-            
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+
         }
     }
 
