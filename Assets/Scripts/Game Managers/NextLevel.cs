@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NextLevel : MonoBehaviour
 {
@@ -19,5 +20,12 @@ public class NextLevel : MonoBehaviour
             gameManager.LoadNextRoom();
 
         }
+        if(other.gameObject.CompareTag("FinalDoor"))
+        {
+            SceneManager.LoadSceneAsync(3);
+            
+        }
     }
+
+    
 }

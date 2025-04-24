@@ -10,6 +10,7 @@ TagManager:
   - Goblins
   - Wall
   - Floor
+  - FinalDoor
   layers:
   - Default
   - TransparentFX

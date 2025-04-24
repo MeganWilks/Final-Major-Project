@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -10,6 +11,11 @@ public class Key : ToolClass
     [Header("Key Object")]
 
     [SerializeField] public GameObject key;
+    [SerializeField] public GameManager gameManager;
+
+   
+
+ 
 
   
     
