@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel.Design.Serialization;
 using System.Linq;
-using System.Resources;
 using UnityEngine;
-using UnityEngine.EventSystems;
+
 
 /// <summary>
 /// This is the Player Controllers Class where it controls the player movement
